@@ -1,0 +1,143 @@
+{
+  "$description": "Gegenereerd door scripts/generate-color-roles.mjs (afwijkingen doubleup uit roles.json, dark). Niet met de hand bewerken.",
+  "basis": {
+    "color": {
+      "$type": "color",
+      "action-1-inverse": {
+        "bg-document": {
+          "$value": "{brand.color.neutral.0}"
+        },
+        "bg-subtle": {
+          "$value": "{brand.color.neutral.50}"
+        },
+        "bg-default": {
+          "$value": "{brand.color.neutral.100}"
+        },
+        "bg-hover": {
+          "$value": "{brand.color.neutral.200}"
+        },
+        "bg-active": {
+          "$value": "{brand.color.neutral.300}"
+        },
+        "border-subtle": {
+          "$value": "{brand.color.neutral.200}"
+        },
+        "border-default": {
+          "$value": "{brand.color.neutral.500}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.action-1-inverse.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        },
+        "border-hover": {
+          "$value": "{brand.color.neutral.600}"
+        },
+        "border-active": {
+          "$value": "{brand.color.neutral.700}"
+        },
+        "color-subtle": {
+          "$value": "{brand.color.neutral.700}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.action-1-inverse.bg-subtle",
+                "use": "text"
+              },
+              {
+                "against": "basis.color.action-1-inverse.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "color-default": {
+          "$value": "{brand.color.neutral.800}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.action-1-inverse.bg-default",
+                "use": "text"
+              },
+              {
+                "against": "basis.color.action-1-inverse.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "color-hover": {
+          "$value": "{brand.color.neutral.900}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.action-1-inverse.bg-hover",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "color-active": {
+          "$value": "{brand.color.neutral.950}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.action-1-inverse.bg-active",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "color-document": {
+          "$value": "{brand.color.neutral.950}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.action-1-inverse.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "dup": {
+    "color": {
+      "$type": "color",
+      "action-1-inverse": {
+        "bg-solid": {
+          "$value": "{brand.color.neutral.solid}"
+        },
+        "bg-solid-hover": {
+          "$value": "{brand.color.neutral.solid-hover}"
+        },
+        "bg-solid-active": {
+          "$value": "{brand.color.neutral.solid-active}"
+        },
+        "color-on-solid": {
+          "$value": "{brand.color.accent.200}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "dup.color.action-1-inverse.bg-solid",
+                "use": "text"
+              },
+              {
+                "against": "dup.color.action-1-inverse.bg-solid-hover",
+                "use": "text"
+              },
+              {
+                "against": "dup.color.action-1-inverse.bg-solid-active",
+                "use": "text"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

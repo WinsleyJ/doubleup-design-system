@@ -40,6 +40,20 @@
         "950": {
           "$value": "#111318",
           "$description": "Ink-kleur uit alle positieve logovarianten"
+        },
+        "solid": {
+          "$value": "{brand.color.neutral.950}",
+          "$description": "Vulkleur: de ankerkleur zelf"
+        },
+        "solid-hover": {
+          "$value": "{brand.color.neutral.900}"
+        },
+        "solid-active": {
+          "$value": "{brand.color.neutral.800}"
+        },
+        "on-solid": {
+          "$value": "{brand.color.neutral.0}",
+          "$description": "Tekst op de vulkleur (18.58:1)"
         }
       },
       "accent": {
@@ -76,6 +90,20 @@
         },
         "950": {
           "$value": "#350900"
+        },
+        "solid": {
+          "$value": "{brand.color.accent.500}",
+          "$description": "Vulkleur: de ankerkleur zelf"
+        },
+        "solid-hover": {
+          "$value": "{brand.color.accent.400}"
+        },
+        "solid-active": {
+          "$value": "{brand.color.accent.300}"
+        },
+        "on-solid": {
+          "$value": "{brand.color.neutral.950}",
+          "$description": "Tekst op de vulkleur (5.96:1)"
         }
       },
       "info": {
@@ -112,6 +140,20 @@
         },
         "950": {
           "$value": "#00124c"
+        },
+        "solid": {
+          "$value": "{brand.color.info.600}",
+          "$description": "Vulkleur: de ankerkleur zelf"
+        },
+        "solid-hover": {
+          "$value": "{brand.color.info.700}"
+        },
+        "solid-active": {
+          "$value": "{brand.color.info.800}"
+        },
+        "on-solid": {
+          "$value": "{brand.color.neutral.0}",
+          "$description": "Tekst op de vulkleur (5.17:1)"
         }
       },
       "positive": {
@@ -148,6 +190,20 @@
         },
         "950": {
           "$value": "#002209"
+        },
+        "solid": {
+          "$value": "{brand.color.positive.500}",
+          "$description": "Vulkleur: de ankerkleur zelf"
+        },
+        "solid-hover": {
+          "$value": "{brand.color.positive.400}"
+        },
+        "solid-active": {
+          "$value": "{brand.color.positive.300}"
+        },
+        "on-solid": {
+          "$value": "{brand.color.neutral.950}",
+          "$description": "Tekst op de vulkleur (5.64:1)"
         }
       },
       "warning": {
@@ -184,6 +240,20 @@
         },
         "950": {
           "$value": "#2c1300"
+        },
+        "solid": {
+          "$value": "{brand.color.warning.500}",
+          "$description": "Vulkleur: de ankerkleur zelf"
+        },
+        "solid-hover": {
+          "$value": "{brand.color.warning.400}"
+        },
+        "solid-active": {
+          "$value": "{brand.color.warning.300}"
+        },
+        "on-solid": {
+          "$value": "{brand.color.neutral.950}",
+          "$description": "Tekst op de vulkleur (5.83:1)"
         }
       },
       "negative": {
@@ -220,6 +290,20 @@
         },
         "950": {
           "$value": "#3a0002"
+        },
+        "solid": {
+          "$value": "{brand.color.negative.600}",
+          "$description": "Vulkleur: de ankerkleur zelf"
+        },
+        "solid-hover": {
+          "$value": "{brand.color.negative.700}"
+        },
+        "solid-active": {
+          "$value": "{brand.color.negative.800}"
+        },
+        "on-solid": {
+          "$value": "{brand.color.neutral.0}",
+          "$description": "Tekst op de vulkleur (4.83:1)"
         }
       }
     }

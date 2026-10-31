@@ -2,7 +2,7 @@
 // Regels: docs/conventies/naamgeving.md
 //  1. Elk naamdeel: alleen a-z, 0-9 en koppeltekens; geen koppelteken aan begin/eind of dubbel.
 //  2. Root moet 'brand', 'basis' of 'dup' zijn.
-//  3. Bestanden in src/themes/** mogen alleen 'brand' (en overrides: 'basis'/'dup') bevatten;
+//  3. Bestanden in src/themes/** mogen alleen 'brand' (en overrides[.light|.dark]: 'basis'/'dup') bevatten;
 //     src/common/** alleen 'basis' of 'dup'; src/components/** alleen 'dup'.
 //  4. DTCG-formaat: tokens gebruiken '$value' (niet 'value') en hebben een '$type' (eigen of geërfd van groep).
 // Exit code 1 bij fouten.
@@ -19,7 +19,8 @@ const ROOTS = new Set(['brand', 'basis', 'dup']);
 
 const allowedRoots = (file) => {
   const parts = relative(srcDir, file).split(sep);
-  if (parts[0] === 'themes') return file.endsWith('overrides.tokens.json') ? ['basis', 'dup'] : ['brand'];
+  if (parts[0] === 'themes')
+    return /overrides(\.(light|dark))?\.tokens\.json$/.test(file) ? ['basis', 'dup'] : ['brand'];
   if (parts[0] === 'common') return ['basis', 'dup'];
   if (parts[0] === 'components') return ['dup'];
   return [...ROOTS];

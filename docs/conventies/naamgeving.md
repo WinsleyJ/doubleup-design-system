@@ -45,4 +45,20 @@ DTCG (spec 2025.10): `$value`, `$type`, `$description`, `$extensions`. Referenti
 
 ## CSS
 
-`dup.button.color` → `--dup-button-color`. Thema-scope via `[data-theme="<thema>"]`, kleurmodus via `[data-color-scheme="light|dark"]` en `prefers-color-scheme`.
+`dup.button.color` → `--dup-button-color`. Thema-scope via `[data-theme="<thema>"]`, kleurmodus via `[data-color-scheme="light|dark"]` en `prefers-color-scheme` (ADR-006).
+
+**Regel:** `data-color-scheme` staat altijd samen met `data-theme` op hetzelfde element:
+
+```html
+<html data-theme="doubleup">
+  <!-- volgt systeemvoorkeur -->
+  <section data-theme="doubleup" data-color-scheme="dark">
+    <!-- donkere band -->
+    <div data-theme="showcase-blauw" data-color-scheme="light"><!-- ander thema, vast licht --></div>
+  </section>
+</html>
+```
+
+## Kleurmodi in bronbestanden
+
+Bestanden `*.light.tokens.json` / `*.dark.tokens.json` gelden alleen in die modus; overige bestanden in beide. Kleurrollen (`basis.color.*`, `dup.color.*`) worden gegenereerd: `pnpm --filter @doubleup/tokens generate`.

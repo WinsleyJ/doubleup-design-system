@@ -1,11 +1,37 @@
-// Bouwt per thema de token-output met Style Dictionary v5 (DTCG-formaat).
-// Invoer per thema: src/themes/<thema>/** (incl. ouders via theme.json "extends") + src/common/** + src/components/**
-// Uitvoer: dist/css/<thema>.css, dist/json/<thema>.json, dist/js/<thema>.js
+// Bouwt per thema de token-output met Style Dictionary v5 (DTCG-formaat), in light en dark.
 //
-// Kleurmodi (light/dark) en platform-formats (Cornerstone, theme.json, …) volgen in stap 2 en 4.
+// CSS (dist/css/<thema>.css), één bestand per thema:
+//   [data-theme="t"]                              → alle tokens, lichte waarden
+//   [data-theme="t"][data-color-scheme="dark"]    → alleen modus-tokens, donker
+//   @media (prefers-color-scheme: dark) { [data-theme="t"]:not([data-color-scheme="light"]) … }
+// Regel: data-color-scheme staat altijd samen met data-theme op hetzelfde element.
+// Alle selectors zijn even specifiek, dus het dichtstbijzijnde thema wint; geneste secties
+// (donkere band op lichte pagina, of een ander thema in een showcase) werken zo betrouwbaar.
+//
+// Verder: dist/css/all-themes.css, dist/json/<thema>.<modus>.json, dist/js/<thema>.<modus>.js
 
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import StyleDictionary from 'style-dictionary';
-import { listThemes, loadAllTokens, root, themeChain } from '../scripts/lib/themes.mjs';
+import { formattedVariables } from 'style-dictionary/utils';
+import { listThemes, loadAllTokens, MODES, modePaths, root, themeChain } from '../scripts/lib/themes.mjs';
+
+const dist = `${root}/dist`;
+rmSync(dist, { recursive: true, force: true });
+
+StyleDictionary.registerFormat({
+  name: 'dup/css-mode',
+  format: ({ dictionary, options }) => {
+    const { theme, mode } = options;
+    const t = `[data-theme="${theme}"]`;
+    const vars = formattedVariables({ format: 'css', dictionary, outputReferences: true, usesDtcg: true });
+    if (mode === 'light') return `${t} {\n  color-scheme: light;\n${vars}\n}\n`;
+    const body = `  color-scheme: dark;\n${vars}`;
+    return (
+      `${t}[data-color-scheme="dark"] {\n${body}\n}\n\n` +
+      `@media (prefers-color-scheme: dark) {\n  ${t}:not([data-color-scheme="light"]) {\n${body.replace(/^/gm, '  ')}\n  }\n}\n`
+    );
+  },
+});
 
 const themes = listThemes();
 if (themes.length === 0) {
@@ -13,36 +39,49 @@ if (themes.length === 0) {
   process.exit(1);
 }
 
+const css = [];
 for (const theme of themes) {
-  const sd = new StyleDictionary({
-    tokens: loadAllTokens(theme),
-    usesDtcg: true,
-    log: { verbosity: 'default', warnings: 'warn' },
-    platforms: {
-      css: {
-        transformGroup: 'css',
-        buildPath: `${root}/dist/css/`,
-        files: [
-          {
-            destination: `${theme}.css`,
-            format: 'css/variables',
-            options: { selector: `[data-theme="${theme}"]`, outputReferences: true },
-          },
-        ],
+  const parts = [];
+  for (const mode of MODES) {
+    const only = mode === 'dark' ? modePaths(theme, 'dark') : null;
+    const sd = new StyleDictionary({
+      tokens: loadAllTokens(theme, mode),
+      usesDtcg: true,
+      log: { verbosity: 'silent', warnings: 'disabled' },
+      platforms: {
+        css: {
+          transformGroup: 'css',
+          buildPath: `${dist}/tmp/`,
+          files: [
+            {
+              destination: `${theme}.${mode}.css`,
+              format: 'dup/css-mode',
+              filter: only ? (token) => only.has(token.path.join('.')) : undefined,
+              options: { theme, mode },
+            },
+          ],
+        },
+        json: {
+          transformGroup: 'js',
+          buildPath: `${dist}/json/`,
+          files: [{ destination: `${theme}.${mode}.json`, format: 'json/nested' }],
+        },
+        js: {
+          transformGroup: 'js',
+          buildPath: `${dist}/js/`,
+          files: [{ destination: `${theme}.${mode}.js`, format: 'javascript/esm' }],
+        },
       },
-      json: {
-        transformGroup: 'js',
-        buildPath: `${root}/dist/json/`,
-        files: [{ destination: `${theme}.json`, format: 'json/nested' }],
-      },
-      js: {
-        transformGroup: 'js',
-        buildPath: `${root}/dist/js/`,
-        files: [{ destination: `${theme}.js`, format: 'javascript/esm' }],
-      },
-    },
-  });
-
-  await sd.buildAllPlatforms();
-  console.log(`✔ thema "${theme}" gebouwd (${themeChain(theme).join(' → ')})`);
+    });
+    await sd.buildAllPlatforms();
+    parts.push(readFileSync(`${dist}/tmp/${theme}.${mode}.css`, 'utf8'));
+  }
+  const file = `/**\n * DoubleUP Design System — thema "${theme}" (${themeChain(theme).join(' → ')})\n * Gegenereerd; niet met de hand bewerken.\n */\n\n${parts.join('\n')}`;
+  mkdirSync(`${dist}/css`, { recursive: true });
+  writeFileSync(`${dist}/css/${theme}.css`, file);
+  css.push(file);
+  console.log(`✔ thema "${theme}" gebouwd (light + dark)`);
 }
+writeFileSync(`${dist}/css/all-themes.css`, css.join('\n'));
+rmSync(`${dist}/tmp`, { recursive: true, force: true });
+console.log(`✔ dist/css/all-themes.css (${themes.length} thema's)`);
