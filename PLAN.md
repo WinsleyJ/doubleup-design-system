@@ -34,6 +34,7 @@ Deze afspraken gelden voor **elke** Claude-sessie, in welke app dan ook (Claude 
 3. **Beslissingen staan alleen in § 10.** Afwijken van een beslissing = eerst de gebruiker vragen, daarna § 10 bijwerken.
 4. **Resultaten landen in de repo** (branch + PR). Een artifact of projectnotitie mag als preview of samenvatting, maar verwijst naar de repo en bevat geen eigen beslissingen.
 5. **Het claude.ai-project bevat alleen een verwijzing** naar dit plan (`claude/LEES EERST – DoubleUP design system`), geen kopie van plan of beslissingen. Zo kunnen er geen twee versies ontstaan.
+6. **Branches en PR's:** elk werkpakket krijgt een eigen branch vanaf de actuele `main`. Claude meldt expliciet **"klaar om te mergen"** met de PR-link; pas daarna mergen. Na een merge pusht Claude nooit meer naar die branch: vervolgwerk gaat op een nieuwe branch vanaf `main`.
 
 ---
 
@@ -415,16 +416,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                            | Laatste update | Notities                                                                     |
-| ----------------------------------- | --------------------------------- | -------------- | ---------------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)        | 31-10-2026     | DDEV nog lokaal te testen                                                    |
-| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`) | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                      |
-| 2 Common/component + build          | ✅ klaar (branch `stap-2-common`) | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld |
-| 3 Referentiecomponenten + Storybook | ⬜ volgende                       |                | Component-tokens liggen klaar; Storybook toont ook `dist/docs`               |
-| 4 Cornerstone-landing               | ⬜                                |                |                                                                              |
-| 5 Kwaliteit & productie             | ⬜                                |                |                                                                              |
+| Stap                                | Status                                                        | Laatste update | Notities                                                                     |
+| ----------------------------------- | ------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                    |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                      |
+| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld |
+| 3 Referentiecomponenten + Storybook | ⬜ volgende                                                   |                | Component-tokens liggen klaar; Storybook toont ook `dist/docs`               |
+| 4 Cornerstone-landing               | ⬜                                                            |                |                                                                              |
+| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                              |
 
-**Volgende actie:** PR's mergen (#2 → `stap-1-brand-laag` → `stap-2-common`); daarna stap 3: referentiecomponenten (HTML/CSS) + Storybook met thema- en modewisselaar.
+**Volgende actie:** PR `stap-2-deel-2` mergen; daarna stap 3 op een nieuwe branch vanaf `main`: referentiecomponenten (HTML/CSS) + Storybook met thema- en modewisselaar.
 
 ---
 
@@ -460,6 +461,7 @@ Gerangschikt op impact:
 | 26  | 31-10-2026 | Componentnamen volgen NL DS Candidate (button `primary/secondary/subtle` + tonen `positive/negative`; alert `error/info/success/warning`) i.p.v. `primary-action` uit het projectdocument-voorbeeld                                                         | Claude → bezwaar? laat het weten   |
 | 27  | 31-10-2026 | Proefthema `voorbeeld` (Source Serif 4, erft niets) blijft als contract-test in de repo                                                                                                                                                                     | Claude                             |
 | 28  | 31-10-2026 | Tokendocumentatie wordt gegenereerd naar `dist/docs` (niet gecommit); Storybook toont haar in stap 3                                                                                                                                                        | Claude                             |
+| 29  | 31-10-2026 | Deel 2 van stap 2 miste de merge van PR #4 (gepusht ná de merge). Opgelost via nieuwe branch `stap-2-deel-2`; werkafspraak § 0.6 toegevoegd                                                                                                                 | Claude, op verzoek Winsley         |
 
 ---
 
