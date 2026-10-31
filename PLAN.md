@@ -418,16 +418,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                                                        | Laatste update | Notities                                                                           |
-| ----------------------------------- | ------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                          |
-| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                            |
-| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld       |
-| 3 Referentiecomponenten + Storybook | ✅ klaar (deel 2 op `stap-3-docs`)                            | 31-10-2026     | Docs-pagina's + Design System-artifact; 160 axe-controles groen                    |
-| 4 Cornerstone-landing               | 🔄 deel 1 klaar (branch `stap-4-cornerstone`)                 | 31-10-2026     | Spikes + child theme + sync-plugin; geblokkeerd op Pro-zip en keuze componentroute |
-| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                                    |
+| Stap                                | Status                                                        | Laatste update | Notities                                                                                          |
+| ----------------------------------- | ------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                                         |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                                           |
+| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld                      |
+| 3 Referentiecomponenten + Storybook | ✅ klaar (deel 2 op `stap-3-docs`)                            | 31-10-2026     | Docs-pagina's + Design System-artifact; 160 axe-controles groen                                   |
+| 4 Cornerstone-landing               | 🔄 deel 1 klaar (branch `stap-4-cornerstone`)                 | 31-10-2026     | Spikes + child theme + sync-plugin + CI-taak WordPress; wacht op Pro-zip (release in wp-packages) |
+| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                                                   |
 
-**Volgende actie:** Winsley: (1) keuze componentroute (ADR-007), (2) Pro-zip aanleveren (lokaal + privé CI). Daarna sandboxtests T1–T9 en de Cornerstone Components.
+**Volgende actie:** Winsley: PR `stap-4-cornerstone` mergen en Pro aanleveren (`docs/adapters/cornerstone.md` § 4: lokaal + release in `wp-packages`, secret `WP_PACKAGES_TOKEN`, variabele `PRO_RELEASE_TAG`). Daarna sandboxtests T1–T9, inclusief knop via Route A én B.
 
 ---
 
@@ -471,6 +471,8 @@ Gerangschikt op impact:
 | 34  | 31-10-2026 | Tokens-build draait de contrastcontrole mee (rapport nodig voor Storybook); contrastfout breekt de build                                                                                                                                                    | Claude                             |
 | 35  | 31-10-2026 | Cornerstone-adapter volgens ADR-007 (voorgesteld): child theme + sync-plugin; Global Colors als `var()`-rollen, Global Variables met prefix `ds-`                                                                                                           | Claude → ter review                |
 | 36  | 31-10-2026 | Root `pnpm build`/`check` draaien over de hele workspace (incl. adapters)                                                                                                                                                                                   | Claude                             |
+| 37  | 31-10-2026 | Componentroute: eerst beide testen in de sandbox (knop via Route A én B, T6a–c), daarna kiezen                                                                                                                                                              | Winsley                            |
+| 38  | 31-10-2026 | Pro-zip voor privé CI als release-asset in `WinsleyJ/wp-packages`; CI leest met fine-grained token (`WP_PACKAGES_TOKEN`) en variabele `PRO_RELEASE_TAG`; zonder token wordt de WordPress-taak overgeslagen                                                  | Winsley                            |
 
 ---
 

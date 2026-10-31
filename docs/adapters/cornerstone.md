@@ -124,3 +124,15 @@ Font Manager: één custom font **Archivo Variable** (het woff2 uit `@doubleup/f
 | T7  | Export/import van de Component Set          | Bestand reproduceerbaar in git?                                                |
 | T8  | Showcase-pagina met `data-theme` per sectie | Elk thema correct, ook in donker                                               |
 | T9  | Playwright + axe tegen de demopagina's      | 0 schendingen, licht en donker                                                 |
+
+## 4. Themeco Pro aanleveren (besloten 31-10-2026)
+
+Pro is commercieel en komt **nooit** in deze repo.
+
+- **Lokaal:** zet de zip neer als `sandboxes/wordpress/vendor-private/pro.zip` (staat in `.gitignore`). Daarna `pnpm build`, `cd sandboxes/wordpress && ddev start && ./seed.sh`.
+- **Privé CI:** de zip staat als bijlage van een release in de privé repo `WinsleyJ/wp-packages`.
+  1. Maak in `wp-packages` een release, bv. tag `themeco-pro-6.9.8`, met de bijlage `pro.zip` (naam begint met `pro`).
+  2. Maak een fine-grained token met alleen **Contents: read** op `WinsleyJ/wp-packages`.
+  3. In `WinsleyJ/doubleup-design-system` → Settings → Secrets and variables → Actions: secret `WP_PACKAGES_TOKEN` (het token) en variabele `PRO_RELEASE_TAG` (bv. `themeco-pro-6.9.8`).
+  4. De CI-taak `wordpress` haalt de zip op, start DDEV en richt de sandbox in. Zonder token/variabele wordt de taak overgeslagen (melding, geen fout).
+- Nieuwe Pro-versie: nieuwe release in `wp-packages`, variabele `PRO_RELEASE_TAG` bijwerken.

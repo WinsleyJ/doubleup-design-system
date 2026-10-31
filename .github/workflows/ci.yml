@@ -38,3 +38,41 @@ jobs:
             packages/tokens/dist/reports/
             packages/tokens/dist/docs/
             packages/storybook/storybook-static/a11y-report.md
+
+  # WordPress + Themeco Pro in DDEV (alleen als de Pro-zip beschikbaar is; zie docs/adapters/cornerstone.md § 4)
+  wordpress:
+    runs-on: ubuntu-latest
+    needs: tokens-css-storybook
+    env:
+      GH_TOKEN: ${{ secrets.WP_PACKAGES_TOKEN }}
+      PRO_RELEASE_TAG: ${{ vars.PRO_RELEASE_TAG }}
+    steps:
+      - name: Pro beschikbaar?
+        id: pro
+        run: |
+          if [ -n "$GH_TOKEN" ] && [ -n "$PRO_RELEASE_TAG" ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; echo "::notice::WP_PACKAGES_TOKEN of PRO_RELEASE_TAG ontbreekt; WordPress-tests overgeslagen."; fi
+      - uses: actions/checkout@v4
+        if: steps.pro.outputs.ok == 'true'
+      - uses: pnpm/action-setup@v4
+        if: steps.pro.outputs.ok == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.pro.outputs.ok == 'true'
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - if: steps.pro.outputs.ok == 'true'
+        run: pnpm install --frozen-lockfile && pnpm --filter @doubleup/adapter-cornerstone... build
+      - name: Pro-zip ophalen (niet loggen, niet bewaren als artifact)
+        if: steps.pro.outputs.ok == 'true'
+        run: |
+          mkdir -p sandboxes/wordpress/vendor-private
+          gh release download "$PRO_RELEASE_TAG" --repo WinsleyJ/wp-packages --pattern 'pro*.zip' --output sandboxes/wordpress/vendor-private/pro.zip
+      - uses: ddev/github-action-setup-ddev@v1
+        if: steps.pro.outputs.ok == 'true'
+        with:
+          ddevDir: sandboxes/wordpress
+          autostart: true
+      - name: Sandbox inrichten (WP, Pro, child theme, sync)
+        if: steps.pro.outputs.ok == 'true'
+        working-directory: sandboxes/wordpress
+        run: ./seed.sh && ddev wp dup tokens status
