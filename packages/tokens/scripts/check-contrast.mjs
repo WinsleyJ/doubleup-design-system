@@ -1,13 +1,14 @@
 // Toetst per thema × kleurmodus alle contrastvereisten tegen WCAG 2.2 AA.
 // Een vereiste staat bij het voorgrond-token zelf:
 //   "$extensions": { "dup.contrast": [{ "against": "<pad achtergrond>", "use": "text" | "large-text" | "non-text" }] }
-// Exit code 1 als een paar niet voldoet. Rapport: dist/reports/contrast.md
+// Exit code 1 als een paar niet voldoet. Rapport: dist/reports/contrast.md en contrast.json
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { evaluate } from './lib/contrast.mjs';
 import { allTokens, listThemes, loadAllTokens, MODES, resolve, root } from './lib/themes.mjs';
 
 const lines = ['# Contrastrapport (WCAG 2.2 AA)', ''];
+const report = [];
 let failures = 0;
 let total = 0;
 
@@ -26,6 +27,7 @@ for (const theme of listThemes()) {
       }
     }
     const results = evaluate(pairs);
+    report.push({ theme, mode, results });
     const bad = results.filter((x) => !x.pass);
     total += results.length;
     failures += bad.length;
@@ -43,6 +45,7 @@ for (const theme of listThemes()) {
 const dir = join(root, 'dist', 'reports');
 mkdirSync(dir, { recursive: true });
 writeFileSync(join(dir, 'contrast.md'), lines.join('\n') + '\n');
+writeFileSync(join(dir, 'contrast.json'), JSON.stringify(report));
 
 if (failures) {
   console.error(`✖ ${failures} van ${total} contrastparen voldoen niet (rapport: dist/reports/contrast.md)`);
