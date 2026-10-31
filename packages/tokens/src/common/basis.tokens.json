@@ -1,0 +1,944 @@
+{
+  "$description": "Common-laag: NL Design System basis-tokens (v3.1.1), niet-kleur. Kleuren: color.<modus>.tokens.json.",
+  "basis": {
+    "action": {
+      "$type": "cursor",
+      "activate": {
+        "cursor": {
+          "$value": "pointer"
+        }
+      },
+      "submit": {
+        "cursor": {
+          "$value": "pointer"
+        }
+      }
+    },
+    "border-radius": {
+      "$type": "dimension",
+      "none": {
+        "$value": "{brand.radius.none}"
+      },
+      "sm": {
+        "$value": "{brand.radius.s}"
+      },
+      "md": {
+        "$value": "{brand.radius.m}"
+      },
+      "lg": {
+        "$value": "{brand.radius.l}"
+      },
+      "round": {
+        "$value": "{brand.radius.pill}"
+      }
+    },
+    "border-width": {
+      "$type": "dimension",
+      "none": {
+        "$value": "0px"
+      },
+      "sm": {
+        "$value": "{brand.border-width.s}"
+      },
+      "md": {
+        "$value": "{brand.border-width.m}"
+      },
+      "lg": {
+        "$value": "{brand.border-width.l}"
+      }
+    },
+    "box-shadow": {
+      "$type": "shadow",
+      "none": {
+        "$value": {
+          "color": "#00000000",
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "blur": "0px",
+          "spread": "0px"
+        }
+      },
+      "sm": {
+        "$value": "{brand.shadow.s}"
+      },
+      "md": {
+        "$value": "{brand.shadow.m}"
+      },
+      "lg": {
+        "$value": "{brand.shadow.l}"
+      }
+    },
+    "focus": {
+      "background-color": {
+        "$type": "color",
+        "$value": "{basis.color.transparent}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.default.color-document}"
+      },
+      "outline-color": {
+        "$type": "color",
+        "$value": "{basis.color.action-1.color-default}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "basis.color.default.bg-document",
+              "use": "non-text"
+            },
+            {
+              "against": "basis.color.default.bg-subtle",
+              "use": "non-text"
+            }
+          ]
+        }
+      },
+      "outline-offset": {
+        "$type": "dimension",
+        "$value": "{brand.border-width.m}"
+      },
+      "outline-style": {
+        "$type": "strokeStyle",
+        "$value": "solid"
+      },
+      "outline-width": {
+        "$type": "dimension",
+        "$value": "{brand.border-width.l}"
+      },
+      "inverse": {
+        "outline-color": {
+          "$type": "color",
+          "$value": "{basis.color.action-1-inverse.color-default}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default-inverse.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "form-control": {
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{basis.text.font-family.default}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{basis.text.font-size.md}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{basis.text.font-weight.default}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{basis.text.line-height.md}"
+      },
+      "accent-color": {
+        "$type": "color",
+        "$value": "{dup.color.action-1.bg-solid}"
+      },
+      "background-color": {
+        "$type": "color",
+        "$value": "{basis.color.default.bg-document}"
+      },
+      "border-color": {
+        "$type": "color",
+        "$value": "{basis.color.default.border-default}"
+      },
+      "border-radius": {
+        "$type": "dimension",
+        "$value": "{basis.border-radius.sm}"
+      },
+      "border-width": {
+        "$type": "dimension",
+        "$value": "{basis.border-width.sm}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.default.color-document}"
+      },
+      "max-inline-size": {
+        "$type": "dimension",
+        "$value": "{brand.size.measure}"
+      },
+      "padding-block-end": {
+        "$type": "dimension",
+        "$value": "{basis.space.block.sm}"
+      },
+      "padding-block-start": {
+        "$type": "dimension",
+        "$value": "{basis.space.block.sm}"
+      },
+      "padding-inline-end": {
+        "$type": "dimension",
+        "$value": "{basis.space.inline.md}"
+      },
+      "padding-inline-start": {
+        "$type": "dimension",
+        "$value": "{basis.space.inline.md}"
+      },
+      "active": {
+        "accent-color": {
+          "$type": "color",
+          "$value": "{dup.color.action-1.bg-solid-active}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.bg-document}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.border-active}"
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.md}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}"
+        }
+      },
+      "disabled": {
+        "accent-color": {
+          "$type": "color",
+          "$value": "{basis.color.disabled.border-default}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.disabled.bg-subtle}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.disabled.border-subtle}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.disabled.color-subtle}"
+        }
+      },
+      "focus": {
+        "accent-color": {
+          "$type": "color",
+          "$value": "{dup.color.action-1.bg-solid}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.bg-document}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.border-active}"
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.md}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}"
+        }
+      },
+      "hover": {
+        "accent-color": {
+          "$type": "color",
+          "$value": "{dup.color.action-1.bg-solid-hover}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.bg-document}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.border-hover}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.sm}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}"
+        }
+      },
+      "invalid": {
+        "accent-color": {
+          "$type": "color",
+          "$value": "{basis.color.negative.border-default}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.bg-document}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.negative.border-default}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.md}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}"
+        }
+      },
+      "placeholder": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-subtle}"
+        }
+      },
+      "read-only": {
+        "accent-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.border-default}"
+        },
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.bg-subtle}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.border-subtle}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}"
+        }
+      }
+    },
+    "heading": {
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{brand.font-family.display}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.default.color-document}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{brand.font-weight.black}"
+      }
+    },
+    "page": {
+      "max-inline-size": {
+        "$type": "dimension",
+        "$value": "{brand.size.page}"
+      }
+    },
+    "pointer-target": {
+      "$type": "dimension",
+      "min-block-size": {
+        "$value": "{brand.size.pointer-target}"
+      },
+      "min-inline-size": {
+        "$value": "{brand.size.pointer-target}"
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "5xs": {
+        "$value": "{brand.space.100}"
+      },
+      "4xs": {
+        "$value": "{brand.space.200}"
+      },
+      "3xs": {
+        "$value": "{brand.space.300}"
+      },
+      "2xs": {
+        "$value": "{brand.space.400}"
+      },
+      "xs": {
+        "$value": "{brand.space.500}"
+      },
+      "sm": {
+        "$value": "{brand.space.600}"
+      },
+      "md": {
+        "$value": "{brand.size.pointer-target}"
+      },
+      "lg": {
+        "$value": "{brand.space.700}"
+      },
+      "xl": {
+        "$value": "{brand.space.800}"
+      },
+      "2xl": {
+        "$value": "{brand.space.900}"
+      },
+      "icon": {
+        "sm": {
+          "$value": "{brand.font-size.sm}"
+        },
+        "md": {
+          "$value": "{brand.font-size.md}"
+        },
+        "lg": {
+          "$value": "{brand.font-size.lg}"
+        },
+        "xl": {
+          "$value": "{brand.font-size.xl}"
+        },
+        "2xl": {
+          "$value": "{brand.font-size.2xl}"
+        },
+        "3xl": {
+          "$value": "{brand.font-size.3xl}"
+        },
+        "4xl": {
+          "$value": "{brand.font-size.4xl}"
+        }
+      }
+    },
+    "space": {
+      "$type": "dimension",
+      "none": {
+        "$value": "{brand.space.0}"
+      },
+      "block": {
+        "2xs": {
+          "$value": "{brand.space.50}"
+        },
+        "xs": {
+          "$value": "{brand.space.100}"
+        },
+        "sm": {
+          "$value": "{brand.space.200}"
+        },
+        "md": {
+          "$value": "{brand.space.300}"
+        },
+        "lg": {
+          "$value": "{brand.space.400}"
+        },
+        "xl": {
+          "$value": "{brand.space.500}"
+        },
+        "2xl": {
+          "$value": "{brand.space.600}"
+        },
+        "3xl": {
+          "$value": "{brand.space.700}"
+        },
+        "4xl": {
+          "$value": "{brand.space.800}"
+        },
+        "5xl": {
+          "$value": "{brand.space.900}"
+        },
+        "6xl": {
+          "$value": "{brand.space.1000}"
+        },
+        "min": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.50}"
+          },
+          "sm": {
+            "$value": "{brand.space.100}"
+          },
+          "md": {
+            "$value": "{brand.space.200}"
+          },
+          "lg": {
+            "$value": "{brand.space.300}"
+          },
+          "xl": {
+            "$value": "{brand.space.400}"
+          },
+          "2xl": {
+            "$value": "{brand.space.500}"
+          },
+          "3xl": {
+            "$value": "{brand.space.600}"
+          },
+          "4xl": {
+            "$value": "{brand.space.700}"
+          },
+          "5xl": {
+            "$value": "{brand.space.800}"
+          },
+          "6xl": {
+            "$value": "{brand.space.900}"
+          }
+        },
+        "max": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.100}"
+          },
+          "sm": {
+            "$value": "{brand.space.200}"
+          },
+          "md": {
+            "$value": "{brand.space.300}"
+          },
+          "lg": {
+            "$value": "{brand.space.400}"
+          },
+          "xl": {
+            "$value": "{brand.space.500}"
+          },
+          "2xl": {
+            "$value": "{brand.space.600}"
+          },
+          "3xl": {
+            "$value": "{brand.space.700}"
+          },
+          "4xl": {
+            "$value": "{brand.space.800}"
+          },
+          "5xl": {
+            "$value": "{brand.space.900}"
+          },
+          "6xl": {
+            "$value": "{brand.space.1000}"
+          }
+        },
+        "$description": "Vaste maat per stap; min/max zijn de grenzen voor vloeiende ruimte (min = één stap kleiner)."
+      },
+      "inline": {
+        "2xs": {
+          "$value": "{brand.space.50}"
+        },
+        "xs": {
+          "$value": "{brand.space.100}"
+        },
+        "sm": {
+          "$value": "{brand.space.200}"
+        },
+        "md": {
+          "$value": "{brand.space.300}"
+        },
+        "lg": {
+          "$value": "{brand.space.400}"
+        },
+        "xl": {
+          "$value": "{brand.space.500}"
+        },
+        "2xl": {
+          "$value": "{brand.space.600}"
+        },
+        "3xl": {
+          "$value": "{brand.space.700}"
+        },
+        "4xl": {
+          "$value": "{brand.space.800}"
+        },
+        "5xl": {
+          "$value": "{brand.space.900}"
+        },
+        "6xl": {
+          "$value": "{brand.space.1000}"
+        },
+        "min": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.50}"
+          },
+          "sm": {
+            "$value": "{brand.space.100}"
+          },
+          "md": {
+            "$value": "{brand.space.200}"
+          },
+          "lg": {
+            "$value": "{brand.space.300}"
+          },
+          "xl": {
+            "$value": "{brand.space.400}"
+          },
+          "2xl": {
+            "$value": "{brand.space.500}"
+          },
+          "3xl": {
+            "$value": "{brand.space.600}"
+          },
+          "4xl": {
+            "$value": "{brand.space.700}"
+          },
+          "5xl": {
+            "$value": "{brand.space.800}"
+          },
+          "6xl": {
+            "$value": "{brand.space.900}"
+          }
+        },
+        "max": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.100}"
+          },
+          "sm": {
+            "$value": "{brand.space.200}"
+          },
+          "md": {
+            "$value": "{brand.space.300}"
+          },
+          "lg": {
+            "$value": "{brand.space.400}"
+          },
+          "xl": {
+            "$value": "{brand.space.500}"
+          },
+          "2xl": {
+            "$value": "{brand.space.600}"
+          },
+          "3xl": {
+            "$value": "{brand.space.700}"
+          },
+          "4xl": {
+            "$value": "{brand.space.800}"
+          },
+          "5xl": {
+            "$value": "{brand.space.900}"
+          },
+          "6xl": {
+            "$value": "{brand.space.1000}"
+          }
+        },
+        "$description": "Vaste maat per stap; min/max zijn de grenzen voor vloeiende ruimte (min = één stap kleiner)."
+      },
+      "row": {
+        "2xs": {
+          "$value": "{brand.space.50}"
+        },
+        "xs": {
+          "$value": "{brand.space.100}"
+        },
+        "sm": {
+          "$value": "{brand.space.200}"
+        },
+        "md": {
+          "$value": "{brand.space.300}"
+        },
+        "lg": {
+          "$value": "{brand.space.400}"
+        },
+        "xl": {
+          "$value": "{brand.space.500}"
+        },
+        "2xl": {
+          "$value": "{brand.space.600}"
+        },
+        "3xl": {
+          "$value": "{brand.space.700}"
+        },
+        "4xl": {
+          "$value": "{brand.space.800}"
+        },
+        "5xl": {
+          "$value": "{brand.space.900}"
+        },
+        "6xl": {
+          "$value": "{brand.space.1000}"
+        },
+        "min": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.50}"
+          },
+          "sm": {
+            "$value": "{brand.space.100}"
+          },
+          "md": {
+            "$value": "{brand.space.200}"
+          },
+          "lg": {
+            "$value": "{brand.space.300}"
+          },
+          "xl": {
+            "$value": "{brand.space.400}"
+          },
+          "2xl": {
+            "$value": "{brand.space.500}"
+          },
+          "3xl": {
+            "$value": "{brand.space.600}"
+          },
+          "4xl": {
+            "$value": "{brand.space.700}"
+          },
+          "5xl": {
+            "$value": "{brand.space.800}"
+          },
+          "6xl": {
+            "$value": "{brand.space.900}"
+          }
+        },
+        "max": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.100}"
+          },
+          "sm": {
+            "$value": "{brand.space.200}"
+          },
+          "md": {
+            "$value": "{brand.space.300}"
+          },
+          "lg": {
+            "$value": "{brand.space.400}"
+          },
+          "xl": {
+            "$value": "{brand.space.500}"
+          },
+          "2xl": {
+            "$value": "{brand.space.600}"
+          },
+          "3xl": {
+            "$value": "{brand.space.700}"
+          },
+          "4xl": {
+            "$value": "{brand.space.800}"
+          },
+          "5xl": {
+            "$value": "{brand.space.900}"
+          },
+          "6xl": {
+            "$value": "{brand.space.1000}"
+          }
+        },
+        "$description": "Vaste maat per stap; min/max zijn de grenzen voor vloeiende ruimte (min = één stap kleiner)."
+      },
+      "column": {
+        "2xs": {
+          "$value": "{brand.space.50}"
+        },
+        "xs": {
+          "$value": "{brand.space.100}"
+        },
+        "sm": {
+          "$value": "{brand.space.200}"
+        },
+        "md": {
+          "$value": "{brand.space.300}"
+        },
+        "lg": {
+          "$value": "{brand.space.400}"
+        },
+        "xl": {
+          "$value": "{brand.space.500}"
+        },
+        "2xl": {
+          "$value": "{brand.space.600}"
+        },
+        "3xl": {
+          "$value": "{brand.space.700}"
+        },
+        "4xl": {
+          "$value": "{brand.space.800}"
+        },
+        "5xl": {
+          "$value": "{brand.space.900}"
+        },
+        "6xl": {
+          "$value": "{brand.space.1000}"
+        },
+        "min": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.50}"
+          },
+          "sm": {
+            "$value": "{brand.space.100}"
+          },
+          "md": {
+            "$value": "{brand.space.200}"
+          },
+          "lg": {
+            "$value": "{brand.space.300}"
+          },
+          "xl": {
+            "$value": "{brand.space.400}"
+          },
+          "2xl": {
+            "$value": "{brand.space.500}"
+          },
+          "3xl": {
+            "$value": "{brand.space.600}"
+          },
+          "4xl": {
+            "$value": "{brand.space.700}"
+          },
+          "5xl": {
+            "$value": "{brand.space.800}"
+          },
+          "6xl": {
+            "$value": "{brand.space.900}"
+          }
+        },
+        "max": {
+          "2xs": {
+            "$value": "{brand.space.50}"
+          },
+          "xs": {
+            "$value": "{brand.space.100}"
+          },
+          "sm": {
+            "$value": "{brand.space.200}"
+          },
+          "md": {
+            "$value": "{brand.space.300}"
+          },
+          "lg": {
+            "$value": "{brand.space.400}"
+          },
+          "xl": {
+            "$value": "{brand.space.500}"
+          },
+          "2xl": {
+            "$value": "{brand.space.600}"
+          },
+          "3xl": {
+            "$value": "{brand.space.700}"
+          },
+          "4xl": {
+            "$value": "{brand.space.800}"
+          },
+          "5xl": {
+            "$value": "{brand.space.900}"
+          },
+          "6xl": {
+            "$value": "{brand.space.1000}"
+          }
+        },
+        "$description": "Vaste maat per stap; min/max zijn de grenzen voor vloeiende ruimte (min = één stap kleiner)."
+      },
+      "text": {
+        "3xs": {
+          "$value": "{brand.space.50}"
+        },
+        "2xs": {
+          "$value": "{brand.space.100}"
+        },
+        "xs": {
+          "$value": "{brand.space.200}"
+        },
+        "sm": {
+          "$value": "{brand.space.300}"
+        },
+        "md": {
+          "$value": "{brand.space.400}"
+        },
+        "lg": {
+          "$value": "{brand.space.500}"
+        },
+        "xl": {
+          "$value": "{brand.space.600}"
+        },
+        "2xl": {
+          "$value": "{brand.space.700}"
+        },
+        "3xl": {
+          "$value": "{brand.space.800}"
+        }
+      }
+    },
+    "text": {
+      "font-family": {
+        "$type": "fontFamily",
+        "default": {
+          "$value": "{brand.font-family.body}"
+        },
+        "monospace": {
+          "$value": "{brand.font-family.mono}"
+        }
+      },
+      "font-size": {
+        "$type": "dimension",
+        "sm": {
+          "$value": "{brand.font-size.sm}"
+        },
+        "md": {
+          "$value": "{brand.font-size.md}"
+        },
+        "lg": {
+          "$value": "{brand.font-size.lg}"
+        },
+        "xl": {
+          "$value": "{brand.font-size.xl}"
+        },
+        "2xl": {
+          "$value": "{brand.font-size.2xl}"
+        },
+        "3xl": {
+          "$value": "{brand.font-size.3xl}"
+        },
+        "4xl": {
+          "$value": "{brand.font-size.4xl}"
+        }
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "default": {
+          "$value": "{brand.font-weight.regular}"
+        },
+        "bold": {
+          "$value": "{brand.font-weight.bold}"
+        }
+      },
+      "line-height": {
+        "$type": "number",
+        "sm": {
+          "$value": "{brand.line-height.normal}"
+        },
+        "md": {
+          "$value": "{brand.line-height.normal}"
+        },
+        "lg": {
+          "$value": "{brand.line-height.snug}"
+        },
+        "xl": {
+          "$value": "{brand.line-height.snug}"
+        },
+        "2xl": {
+          "$value": "{brand.line-height.tight}"
+        },
+        "3xl": {
+          "$value": "{brand.line-height.tight}"
+        },
+        "4xl": {
+          "$value": "{brand.line-height.tight}"
+        }
+      }
+    }
+  }
+}

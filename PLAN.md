@@ -293,10 +293,10 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 ### Stap 2 — Common- en component-tokens + build-pipeline (± 3 sessies)
 
-- [ ] Common-laag: NL DS `basis`-tokens overnemen waar beschikbaar (mits ADR-004 positief), aangevuld onder `dup`: color (text, background, border, interactive, feedback, focus) × light/dark; typography (heading, body, …); space; size
+- [x] Common-laag: alle 614 NL DS `basis`-tokens gevuld + aanvullingen onder `dup` (vulkleuren `dup.color.<rol>.bg-solid…`, motion, opacity, heading-breedte). Kleurrollen gegenereerd per modus (ADR-006)
 - [ ] Component-tokens voor de eerste set: button, link, heading, paragraph, form-field (textbox, label, error), card, alert, skip-link, navigation (basis)
-- [ ] Style Dictionary v5-config: CSS (per thema, met modi), SCSS, JS/TS, JSON
-- [ ] Scripts (deterministisch, geen LLM nodig): `validate-names` (naamconventie), `check-contrast` (WCAG AA per thema × modus), `check-contract` (elk thema levert alle verplichte slots)
+- [x] Style Dictionary v5-config: CSS per thema met light/dark (`data-theme` + `data-color-scheme` + `prefers-color-scheme`), `all-themes.css`, JSON en JS per modus — _SCSS nog niet (pas als een platform erom vraagt)_
+- [x] Scripts (deterministisch, geen LLM nodig): `validate-names`, `check-contrast` (vereisten als `$extensions` bij het token; 1.614 paren), `check-contract` (brand-slots, alle basis-tokens, referenties, laagregel)
 - [ ] **Proefthema `voorbeeld`** met een totaal ander palet → bewijst dat alleen een brand-laag volstaat
 - [ ] Gegenereerde token-documentatie (alfabetisch per laag, conform projectdoc)
 
@@ -415,16 +415,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                            | Laatste update | Notities                                                     |
-| ----------------------------------- | --------------------------------- | -------------- | ------------------------------------------------------------ |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)        | 31-10-2026     | DDEV nog lokaal te testen                                    |
-| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`) | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI      |
-| 2 Common/component + build          | ⬜ volgende                       |                | Rollen uit `roles.json` worden common-laag (`basis` + `dup`) |
-| 3 Referentiecomponenten + Storybook | ⬜                                |                |                                                              |
-| 4 Cornerstone-landing               | ⬜                                |                |                                                              |
-| 5 Kwaliteit & productie             | ⬜                                |                |                                                              |
+| Stap                                | Status                                   | Laatste update | Notities                                                                                      |
+| ----------------------------------- | ---------------------------------------- | -------------- | --------------------------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)               | 31-10-2026     | DDEV nog lokaal te testen                                                                     |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)        | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                                       |
+| 2 Common/component + build          | 🔄 deel 1 klaar (branch `stap-2-common`) | 31-10-2026     | Common-laag + modi + checks klaar; open: component-tokens, proefthema `voorbeeld`, token-docs |
+| 3 Referentiecomponenten + Storybook | ⬜                                       |                |                                                                                               |
+| 4 Cornerstone-landing               | ⬜                                       |                |                                                                                               |
+| 5 Kwaliteit & productie             | ⬜                                       |                |                                                                                               |
 
-**Volgende actie:** PR #2 en daarna PR `stap-1-brand-laag` mergen → stap 2 (common-laag op NL DS `basis`, component-tokens, kleurmodi in CSS, `check-contract`).
+**Volgende actie:** PR's mergen (#2 → `stap-1-brand-laag` → `stap-2-common`); daarna stap 2 deel 2: component-tokens (button, link, heading, paragraph, form-field, card, alert, skip-link, navigation), proefthema `voorbeeld`, token-documentatie.
 
 ---
 
@@ -454,6 +454,9 @@ Gerangschikt op impact:
 | 20  | 31-10-2026 | Niet-gekozen voorstellen blijven als showcase-thema's: `showcase-blauw` (blauw + Mona Sans, info → cyaan) en `showcase-oranje` (oranje + Bricolage). Doel: thema-showcase op de DoubleUP-site (stap 4)                                                      | Winsley                            |
 | 21  | 31-10-2026 | Thema's kunnen erven (`theme.json` → `extends`); kleurschalen worden gegenereerd uit `palette.json`                                                                                                                                                         | Claude                             |
 | 22  | 31-10-2026 | Design System-artifact verplaatst van stap 1 naar einde stap 3, gegenereerd uit de repo (geen tweede bron van waarheid, zie § 0)                                                                                                                            | Claude → bezwaar? laat het weten   |
+| 23  | 31-10-2026 | Kleurrollen gegenereerd met vaste trap per modus; vulkleuren als `dup.color.<rol>.bg-solid…`; contrastvereisten als `$extensions` bij het token (ADR-006)                                                                                                   | Claude → ter review                |
+| 24  | 31-10-2026 | `data-color-scheme` altijd samen met `data-theme` op hetzelfde element (nodig voor betrouwbare nesting/showcase)                                                                                                                                            | Claude → ter review                |
+| 25  | 31-10-2026 | `extends` erft alleen de brand-laag, niet `roles.json`/overrides                                                                                                                                                                                            | Claude                             |
 
 ---
 

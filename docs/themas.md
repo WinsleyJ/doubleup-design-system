@@ -10,14 +10,15 @@ Alle thema's zijn tegelijk te laden (CSS per `[data-theme="…"]`); zo kan een s
 
 ## Bestanden per thema (`packages/tokens/src/themes/<thema>/`)
 
-| Bestand                   | Inhoud                                                                                                                                                                  |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `palette.json`            | Invoer: ankerkleuren per slot (neutral, accent, info, positive, warning, negative)                                                                                      |
-| `brand-color.tokens.json` | **Gegenereerd** met `pnpm --filter @doubleup/tokens palette <thema>`                                                                                                    |
-| `brand-font.tokens.json`  | `brand.font-family.{display,body,mono}`, `brand.font-stretch.{normal,display}`                                                                                          |
-| `brand.tokens.json`       | Overige schalen (space, radius, border-width, opacity, shadow, duration, easing, font-weight, line-height, font-size). Alleen in `doubleup`; showcase-thema's erven dit |
-| `roles.json`              | Voorlopige rollen per kleurmodus (bron voor `check-contrast`); worden in stap 2 de common-laag + overrides                                                              |
-| `theme.json`              | Optioneel: `{ "extends": "<thema>" }`                                                                                                                                   |
+| Bestand                             | Inhoud                                                                                                                                                                  |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `palette.json`                      | Invoer: ankerkleuren per slot (neutral, accent, info, positive, warning, negative)                                                                                      |
+| `brand-color.tokens.json`           | **Gegenereerd** met `pnpm --filter @doubleup/tokens palette <thema>`                                                                                                    |
+| `brand-font.tokens.json`            | `brand.font-family.{display,body,mono}`, `brand.font-stretch.{normal,display}`                                                                                          |
+| `brand.tokens.json`                 | Overige schalen (space, radius, border-width, opacity, shadow, duration, easing, font-weight, line-height, font-size). Alleen in `doubleup`; showcase-thema's erven dit |
+| `roles.json`                        | Optioneel: afwijkingen van de standaard rol → slot-koppeling per modus (ADR-006). Wordt **niet** geërfd                                                                 |
+| `overrides.light\|dark.tokens.json` | **Gegenereerd** uit `roles.json`                                                                                                                                        |
+| `theme.json`                        | Optioneel: `{ "extends": "<thema>" }`                                                                                                                                   |
 
 ## Hoe het accent wordt ingezet (verschilt per thema)
 
@@ -29,3 +30,5 @@ Alle thema's zijn tegelijk te laden (CSS per `[data-theme="…"]`); zo kan een s
 | Markering/highlight | lime                     | lime                  | accent-600              | accent-500             |
 
 Lime is op wit onleesbaar als tekst (1,3:1); daarom draagt het in light mode alleen vlakken, onderstrepingen en markeringen. `check-contrast` bewaakt dit.
+
+Sinds stap 2 komt dit uit de common-laag: standaard `action-1` → `accent`; `doubleup/roles.json` zet in light `action-1` op `neutral` met `color-on-solid` = lime. De showcase-thema's volgen de standaard.

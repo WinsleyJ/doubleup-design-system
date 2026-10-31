@@ -18,9 +18,9 @@ Vraag wat ontbreekt: themanaam (alleen `a-z0-9-`), merkkleur(en) (hex), letterty
 3. `palette.json`: ankerkleuren voor `neutral` (met `"kind": "neutral"`), `accent`, `info`, `positive`, `warning`, `negative`. Botst het accent met een meldingskleur, verschuif dan de meldingskleur.
 4. `pnpm --filter @doubleup/tokens palette <thema>` → schrijft `brand-color.tokens.json`.
 5. `brand-font.tokens.json`: `brand.font-family.{display,body,mono}` en `brand.font-stretch.{normal,display}`. Fontbestand + `@font-face` in `packages/fonts` (OFL-licentie meeleveren).
-6. `roles.json`: alleen de accent-afhankelijke rollen per modus (`action-bg`, `action-fg`, `action-hover`, `link`, `link-hover`, `underline`, `focus`, `mark`); neutrale en meldingsrollen worden geërfd. Is de accentkleur licht (zoals lime), gebruik hem in light mode niet als tekstkleur.
+6. Alleen als de standaard rolkoppeling niet past (bv. een heel licht accent): `roles.json` met afwijkingen per modus (ADR-006, voorbeeld: `themes/doubleup/roles.json`). Daarna `pnpm --filter @doubleup/tokens roles`.
 7. Klant-eigen kleurnamen alleen als alias naast de slots.
-8. `pnpm build && pnpm check` — naamconventie én contrast (light + dark) moeten groen zijn. Rapport: `packages/tokens/dist/reports/contrast.md`.
+8. `pnpm build && pnpm check` — naamconventie, contract (alle brand-slots) én contrast (light + dark) moeten groen zijn. Rapport: `packages/tokens/dist/reports/contrast.md`.
 9. Thema toevoegen aan `docs/themas.md`; `PLAN.md` § 9/§ 10 bijwerken.
 10. Platform (vanaf stap 4): `wp dup tokens sync --theme=<thema>`.
 

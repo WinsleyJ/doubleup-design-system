@@ -1,0 +1,49 @@
+{
+  "$description": "Common-aanvullingen onder dup: wat basis niet dekt.",
+  "dup": {
+    "duration": {
+      "$type": "duration",
+      "fast": {
+        "$value": "{brand.duration.fast}"
+      },
+      "normal": {
+        "$value": "{brand.duration.normal}"
+      },
+      "slow": {
+        "$value": "{brand.duration.slow}"
+      }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard": {
+        "$value": "{brand.easing.standard}"
+      }
+    },
+    "opacity": {
+      "$type": "number",
+      "subtle": {
+        "$value": "{brand.opacity.subtle}"
+      },
+      "disabled": {
+        "$value": "{brand.opacity.disabled}"
+      }
+    },
+    "heading": {
+      "font-stretch": {
+        "$type": "fontStretch",
+        "$value": "{brand.font-stretch.display}"
+      }
+    },
+    "text": {
+      "font-weight": {
+        "$type": "fontWeight",
+        "medium": {
+          "$value": "{brand.font-weight.medium}"
+        },
+        "semibold": {
+          "$value": "{brand.font-weight.semibold}"
+        }
+      }
+    }
+  }
+}

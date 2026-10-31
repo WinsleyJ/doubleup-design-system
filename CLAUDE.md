@@ -21,6 +21,7 @@ Multi-brand design system. Tokens (DTCG) → Style Dictionary v5 → CSS-variabe
 ## Commando's
 
 - `pnpm install` · `pnpm build` · `pnpm check` · `pnpm format`
+- Na wijziging in `palette.json`/`roles.json`: `pnpm --filter @doubleup/tokens generate` (gegenereerde bestanden nooit met de hand bewerken)
 
 ## Waar staat wat
 

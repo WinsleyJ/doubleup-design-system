@@ -15,10 +15,13 @@
   ],
   "scripts": {
     "build": "node build/build.mjs",
-    "check": "node scripts/validate-names.mjs && node scripts/check-contrast.mjs",
-    "palette": "node scripts/generate-palette.mjs"
+    "check": "node scripts/validate-names.mjs && node scripts/check-contract.mjs && node scripts/check-contrast.mjs",
+    "palette": "node scripts/generate-palette.mjs",
+    "roles": "node scripts/generate-color-roles.mjs",
+    "generate": "for t in $(ls src/themes); do node scripts/generate-palette.mjs $t; done && node scripts/generate-color-roles.mjs"
   },
   "devDependencies": {
+    "@nl-design-system-unstable/basis-design-tokens": "3.1.1",
     "culori": "4.0.2",
     "style-dictionary": "5.7.1"
   }
