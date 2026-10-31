@@ -1,0 +1,17 @@
+{
+  "name": "@doubleup/design-system-export",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Exporteert het DoubleUP-thema naar het claude.ai Design System-artifact (alleen-lezen kopie; repo is de bron).",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@doubleup/css": "workspace:*",
+    "@doubleup/fonts": "workspace:*",
+    "@doubleup/icons": "workspace:*",
+    "@doubleup/tokens": "workspace:*"
+  }
+}

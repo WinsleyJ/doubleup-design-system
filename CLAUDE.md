@@ -28,7 +28,7 @@ Multi-brand design system. Tokens (DTCG) → Style Dictionary v5 → CSS-variabe
 
 - `packages/tokens/src/{themes,common,components}` — bron-tokens
 - `packages/tokens/scripts/` — deterministische checks (gebruik deze i.p.v. handmatig controleren)
-- `docs/adr/` — architectuurbeslissingen · `docs/adapters/` — platform-notities
+- `docs/adr/` — architectuurbeslissingen · `docs/adapters/` — platform-notities · `docs/design-system-artifact.md` — sync claude.ai Design System
 - `packages/css/src` — referentiecomponenten · `packages/storybook/stories` — stories
 - `adapters/<platform>/` — platform-landingen · `sandboxes/<platform>/` — DDEV-testomgevingen
 

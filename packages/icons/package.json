@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "type": "module",
   "exports": {
-    "./svg/*": "./svg/*"
+    "./svg/*": "./svg/*",
+    "./package.json": "./package.json"
   },
   "files": [
     "svg"

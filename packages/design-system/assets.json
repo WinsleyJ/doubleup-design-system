@@ -1,0 +1,55 @@
+{
+  "$description": "Blob-id's van de logo's in het Design System-artifact (https://claude.ai/artifact/TzCAfqRJN9SWEaehCnJi4s). Bijwerken na een nieuwe upload; sha256 = inhoud bij upload.",
+  "$artifact": "da89e1bc-8dd8-4da2-b998-1ed500335f7c",
+  "$createdAt": "2026-10-31T14:30:00Z",
+  "doubleup-logo.svg": {
+    "blob": "8157702d3cd5db58144a87429ba375fc",
+    "size": 769,
+    "sha256": "9c6be356485bffc6956930f738eb1e01b0068c4c623347de877171cba11e4ac1"
+  },
+  "doubleup-logo-wit.svg": {
+    "blob": "18ff3b0fcd07cb240b807a7d61ade372",
+    "size": 769,
+    "sha256": "74ff26853ebd6814aeb1a491fa327e2c9dd6feaf677541711d3d3226a9a8abcc"
+  },
+  "doubleup-logo-lagen.svg": {
+    "blob": "245531dc6cc24cc9e7a2ce4706b14185",
+    "size": 800,
+    "sha256": "17a3c901a1dce657be6003a1a4d859beac3ec63234507883d4ce79f7bedf06e2"
+  },
+  "doubleup-logo-lagen-wit.svg": {
+    "blob": "e2083bb2618fb5d90966c2eb15429e3c",
+    "size": 800,
+    "sha256": "f34882688485cd363d025fc1641b4d06c8ad6dc46472832bdc34bf2b89a52ade"
+  },
+  "doubleup-icoon.svg": {
+    "blob": "b50478a53a44f92375c78e01732e3319",
+    "size": 886,
+    "sha256": "9f8ff8091cd4407b6ea8b98384081b01a5ba8a972e01adb1a3ac6a23860433cd"
+  },
+  "doubleup-icoon-wit.svg": {
+    "blob": "52f0400e6af0308fe645082134606922",
+    "size": 886,
+    "sha256": "e4117026f52e99e21484dc94f092c9aeb9d23b744f7b11bd6b5048ba4badbb8d"
+  },
+  "doubleup-icoon-lagen.svg": {
+    "blob": "a72d944642155b21a4eb7b328c660841",
+    "size": 889,
+    "sha256": "304d058314dedae78229bbbb1fd62aeb05f4522530c0e627dd3b7874943b26fd"
+  },
+  "doubleup-icoon-lagen-wit.svg": {
+    "blob": "16707f2f31dae0fe96b1a1c6f55d099f",
+    "size": 889,
+    "sha256": "6c7e6eb10e428685687bd5c20bc20b9bc46045378263a1b212e592f7fe5641a1"
+  },
+  "doubleup-lockup.svg": {
+    "blob": "1b3c0690878a4a4dec4cf070911ca9b0",
+    "size": 8083,
+    "sha256": "e104ed333d21adca4a67f274f2a995f4b5e2b7d3de54fd2f937d95e4c08e0d01"
+  },
+  "doubleup-lockup-wit.svg": {
+    "blob": "ee8bbf08179539383facc99d46e42141",
+    "size": 8083,
+    "sha256": "4654ce48d005c493b744c60588d61931619da445c8344e3170c8216eda1d5852"
+  }
+}
