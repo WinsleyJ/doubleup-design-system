@@ -1,0 +1,29 @@
+/* Alleen voor Storybook: kader rond elke story. */
+.sb-dup-frame {
+  min-block-size: 100vh;
+  padding: var(--basis-space-block-xl) var(--basis-space-inline-xl);
+  box-sizing: border-box;
+}
+.sb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--basis-space-row-sm) var(--basis-space-column-sm);
+  align-items: center;
+  margin-block-end: var(--basis-space-block-lg);
+}
+.sb-stack {
+  display: grid;
+  gap: var(--basis-space-row-lg);
+  max-inline-size: 48rem;
+}
+.sb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--basis-space-row-md);
+}
+.sb-label {
+  font-family: var(--basis-text-font-family-monospace);
+  font-size: var(--basis-text-font-size-sm);
+  color: var(--basis-color-default-color-subtle);
+  margin-block-end: var(--basis-space-block-xs);
+}

@@ -1,0 +1,41 @@
+/* Formulierveld: label, toelichting, foutmelding. */
+.dup-form-field {
+  display: grid;
+  justify-items: start;
+}
+.dup-form-field-label {
+  color: var(--dup-form-field-label-color);
+  font-family: var(--dup-form-field-label-font-family);
+  font-size: var(--dup-form-field-label-font-size);
+  font-weight: var(--dup-form-field-label-font-weight);
+  line-height: var(--dup-form-field-label-line-height);
+}
+.dup-form-field-label--disabled {
+  color: var(--dup-form-field-label-disabled-color);
+}
+.dup-form-field-description {
+  color: var(--dup-form-field-description-color);
+  font-family: var(--dup-form-field-description-font-family);
+  font-size: var(--dup-form-field-description-font-size);
+  font-weight: var(--dup-form-field-description-font-weight);
+  line-height: var(--dup-form-field-description-line-height);
+  margin-block: var(--dup-form-field-description-margin-block-start) var(--dup-form-field-description-margin-block-end);
+}
+.dup-form-field-error-message {
+  display: inline-flex;
+  align-items: center;
+  column-gap: var(--dup-form-field-error-message-column-gap);
+  color: var(--dup-form-field-error-message-color);
+  font-family: var(--dup-form-field-error-message-font-family);
+  font-size: var(--dup-form-field-error-message-font-size);
+  font-weight: var(--dup-form-field-error-message-font-weight);
+  line-height: var(--dup-form-field-error-message-line-height);
+  margin-block: var(--dup-form-field-error-message-margin-block-start)
+    var(--dup-form-field-error-message-margin-block-end);
+}
+.dup-form-field-error-message__icon {
+  inline-size: var(--dup-form-field-error-message-icon-size);
+  block-size: var(--dup-form-field-error-message-icon-size);
+  color: var(--dup-form-field-error-message-icon-color);
+  flex: none;
+}

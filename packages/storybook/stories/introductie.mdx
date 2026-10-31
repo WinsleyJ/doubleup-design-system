@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introductie" />
+
+# DoubleUP Design System
+
+Referentiecomponenten in pure HTML/CSS, gestyled met design tokens in drie lagen:
+
+1. **Brand** — per thema (`doubleup`, `showcase-blauw`, `showcase-oranje`, `voorbeeld`)
+2. **Common** — NL Design System `basis`-tokens + aanvullingen onder `dup`
+3. **Component** — `dup.<component>.*`, namen volgens NL DS Candidate
+
+Wissel **thema** en **modus** in de toolbar bovenaan: elke story gebruikt dezelfde HTML, alleen de tokens veranderen.
+
+## Gebruik
+
+```html
+<link rel="stylesheet" href="@doubleup/fonts/archivo.css" />
+<link rel="stylesheet" href="@doubleup/tokens/css/doubleup.css" />
+<link rel="stylesheet" href="@doubleup/css" />
+
+<body class="dup-document" data-theme="doubleup">
+  <section data-theme="doubleup" data-color-scheme="dark">…</section>
+</body>
+```
+
+**Regel:** `data-color-scheme` staat altijd samen met `data-theme` op hetzelfde element (ADR-006).
+
+Bron van waarheid: `PLAN.md` in de repo `WinsleyJ/doubleup-design-system`.

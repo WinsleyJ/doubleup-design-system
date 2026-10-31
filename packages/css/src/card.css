@@ -1,0 +1,50 @@
+/* Card — ook als klikbare kaart (.dup-card--link: hele kaart klikbaar via de link in de titel). */
+.dup-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  row-gap: var(--dup-card-row-gap);
+  padding-block: var(--dup-card-padding-block);
+  padding-inline: var(--dup-card-padding-inline);
+  background-color: var(--dup-card-background-color);
+  border: var(--dup-card-border-width) solid var(--dup-card-border-color);
+  border-radius: var(--dup-card-border-radius);
+  box-shadow: var(--dup-card-box-shadow);
+  color: var(--dup-card-color);
+  transition:
+    background-color var(--dup-duration-normal) var(--dup-easing-standard),
+    box-shadow var(--dup-duration-normal) var(--dup-easing-standard);
+}
+.dup-card__subtle {
+  color: var(--dup-card-subtle-color);
+}
+.dup-card--link:hover {
+  background-color: var(--dup-card-hover-background-color);
+  box-shadow: var(--dup-card-hover-box-shadow);
+}
+.dup-card--link .dup-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.dup-card--link .dup-card__link:focus-visible {
+  outline: none;
+}
+.dup-card--link:has(.dup-card__link:focus-visible) {
+  outline: var(--basis-focus-outline-width) var(--basis-focus-outline-style) var(--basis-focus-outline-color);
+  outline-offset: var(--basis-focus-outline-offset);
+}
+.dup-card > :is(h1, h2, h3, h4, h5, h6, p) {
+  margin: 0;
+}
+.dup-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+.dup-card--link:hover .dup-card__link {
+  text-decoration-line: underline;
+  text-decoration-color: var(--dup-link-text-decoration-color);
+  text-decoration-thickness: var(--dup-link-text-decoration-thickness);
+  text-underline-offset: var(--dup-link-text-underline-offset);
+}

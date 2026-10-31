@@ -1,0 +1,7 @@
+.dup-mark {
+  background-color: var(--dup-mark-background-color);
+  color: var(--dup-mark-color);
+  padding-inline: 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}

@@ -1,0 +1,25 @@
+/* Document: basisopmaak van een pagina of sectie met een thema. */
+.dup-document {
+  background-color: var(--basis-color-default-bg-document);
+  color: var(--basis-color-default-color-document);
+  font-family: var(--dup-paragraph-font-family);
+  font-size: var(--dup-paragraph-font-size);
+  font-weight: var(--dup-paragraph-font-weight);
+  line-height: var(--dup-paragraph-line-height);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Eén consistente focusstijl voor alle interactieve elementen (WCAG 2.4.7, 3.2.4). */
+.dup-document :focus-visible {
+  outline: var(--basis-focus-outline-width) var(--basis-focus-outline-style) var(--basis-focus-outline-color);
+  outline-offset: var(--basis-focus-outline-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dup-document *,
+  .dup-document *::before,
+  .dup-document *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}

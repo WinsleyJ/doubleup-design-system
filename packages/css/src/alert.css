@@ -1,0 +1,59 @@
+/* Alert — typen: info | success | warning | error. Gebruik role="status" (of role="alert" bij fouten). */
+.dup-alert {
+  --_bg: var(--dup-alert-info-background-color);
+  --_border: var(--dup-alert-info-border-color);
+  --_color: var(--dup-alert-info-color);
+  --_icon: var(--dup-alert-info-icon-color);
+
+  display: flex;
+  align-items: flex-start;
+  column-gap: var(--dup-alert-column-gap);
+  margin-block: var(--dup-alert-margin-block-start) var(--dup-alert-margin-block-end);
+  padding-block: var(--dup-alert-padding-block-start) var(--dup-alert-padding-block-end);
+  padding-inline: var(--dup-alert-padding-inline-start) var(--dup-alert-padding-inline-end);
+  background-color: var(--_bg);
+  border: var(--dup-alert-border-width) solid var(--_border);
+  border-inline-start-width: var(--dup-alert-border-inline-start-width);
+  border-radius: var(--dup-alert-border-radius);
+  color: var(--_color);
+}
+.dup-alert__icon {
+  inline-size: var(--dup-alert-icon-size);
+  block-size: var(--dup-alert-icon-size);
+  color: var(--_icon);
+  flex: none;
+}
+.dup-alert__message {
+  display: grid;
+  row-gap: var(--dup-alert-message-row-gap);
+}
+.dup-alert__heading {
+  font-size: var(--dup-alert-heading-font-size);
+  font-weight: var(--dup-alert-heading-font-weight);
+  line-height: var(--dup-alert-heading-line-height);
+  margin: 0;
+}
+.dup-alert--info {
+  --_bg: var(--dup-alert-info-background-color);
+  --_border: var(--dup-alert-info-border-color);
+  --_color: var(--dup-alert-info-color);
+  --_icon: var(--dup-alert-info-icon-color);
+}
+.dup-alert--success {
+  --_bg: var(--dup-alert-success-background-color);
+  --_border: var(--dup-alert-success-border-color);
+  --_color: var(--dup-alert-success-color);
+  --_icon: var(--dup-alert-success-icon-color);
+}
+.dup-alert--warning {
+  --_bg: var(--dup-alert-warning-background-color);
+  --_border: var(--dup-alert-warning-border-color);
+  --_color: var(--dup-alert-warning-color);
+  --_icon: var(--dup-alert-warning-icon-color);
+}
+.dup-alert--error {
+  --_bg: var(--dup-alert-error-background-color);
+  --_border: var(--dup-alert-error-border-color);
+  --_color: var(--dup-alert-error-color);
+  --_icon: var(--dup-alert-error-icon-color);
+}

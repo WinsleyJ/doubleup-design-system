@@ -1,0 +1,184 @@
+/* Button — varianten: primary | secondary | subtle; tonen: positive | negative. */
+.dup-button {
+  --_bg: var(--dup-button-primary-background-color);
+  --_border: var(--dup-button-primary-border-color);
+  --_color: var(--dup-button-primary-color);
+  --_bg-hover: var(--dup-button-primary-hover-background-color);
+  --_border-hover: var(--dup-button-primary-hover-border-color);
+  --_color-hover: var(--dup-button-primary-hover-color);
+  --_bg-active: var(--dup-button-primary-active-background-color);
+  --_border-active: var(--dup-button-primary-active-border-color);
+  --_color-active: var(--dup-button-primary-active-color);
+  --_bg-disabled: var(--dup-button-primary-disabled-background-color);
+  --_border-disabled: var(--dup-button-primary-disabled-border-color);
+  --_color-disabled: var(--dup-button-primary-disabled-color);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--dup-button-column-gap);
+  min-block-size: var(--dup-button-min-block-size);
+  min-inline-size: var(--dup-button-min-inline-size);
+  padding-block: var(--dup-button-padding-block-start) var(--dup-button-padding-block-end);
+  padding-inline: var(--dup-button-padding-inline-start) var(--dup-button-padding-inline-end);
+  border: var(--dup-button-primary-border-width) solid var(--_border);
+  border-radius: var(--dup-button-border-radius);
+  background-color: var(--_bg);
+  color: var(--_color);
+  font-family: var(--dup-button-font-family);
+  font-size: var(--dup-button-primary-font-size);
+  font-weight: var(--dup-button-primary-font-weight);
+  line-height: var(--dup-button-primary-line-height);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--dup-duration-fast) var(--dup-easing-standard),
+    border-color var(--dup-duration-fast) var(--dup-easing-standard),
+    color var(--dup-duration-fast) var(--dup-easing-standard);
+}
+.dup-button:focus-visible {
+  outline-offset: var(--dup-button-outline-offset);
+}
+.dup-button:hover {
+  background-color: var(--_bg-hover);
+  border-color: var(--_border-hover);
+  color: var(--_color-hover);
+}
+.dup-button:active {
+  background-color: var(--_bg-active);
+  border-color: var(--_border-active);
+  color: var(--_color-active);
+}
+.dup-button:disabled,
+.dup-button[aria-disabled='true'] {
+  background-color: var(--_bg-disabled);
+  border-color: var(--_border-disabled);
+  color: var(--_color-disabled);
+  cursor: not-allowed;
+}
+.dup-button__icon {
+  inline-size: var(--dup-button-icon-size);
+  block-size: var(--dup-button-icon-size);
+  flex: none;
+}
+.dup-button--icon-only {
+  padding-block: var(--dup-button-icon-only-padding-block-start) var(--dup-button-icon-only-padding-block-end);
+  padding-inline: var(--dup-button-icon-only-padding-inline-start) var(--dup-button-icon-only-padding-inline-end);
+}
+
+.dup-button--primary {
+  --_bg: var(--dup-button-primary-background-color);
+  --_border: var(--dup-button-primary-border-color);
+  --_color: var(--dup-button-primary-color);
+  --_bg-hover: var(--dup-button-primary-hover-background-color);
+  --_border-hover: var(--dup-button-primary-hover-border-color);
+  --_color-hover: var(--dup-button-primary-hover-color);
+  --_bg-active: var(--dup-button-primary-active-background-color);
+  --_border-active: var(--dup-button-primary-active-border-color);
+  --_color-active: var(--dup-button-primary-active-color);
+  --_bg-disabled: var(--dup-button-primary-disabled-background-color);
+  --_border-disabled: var(--dup-button-primary-disabled-border-color);
+  --_color-disabled: var(--dup-button-primary-disabled-color);
+  border-width: var(--dup-button-primary-border-width);
+  font-weight: var(--dup-button-primary-font-weight);
+}
+.dup-button--primary.dup-button--positive {
+  --_bg: var(--dup-button-primary-positive-background-color);
+  --_border: var(--dup-button-primary-positive-border-color);
+  --_color: var(--dup-button-primary-positive-color);
+  --_bg-hover: var(--dup-button-primary-positive-hover-background-color);
+  --_border-hover: var(--dup-button-primary-positive-hover-border-color);
+  --_color-hover: var(--dup-button-primary-positive-hover-color);
+  --_bg-active: var(--dup-button-primary-positive-active-background-color);
+  --_border-active: var(--dup-button-primary-positive-active-border-color);
+  --_color-active: var(--dup-button-primary-positive-active-color);
+}
+.dup-button--primary.dup-button--negative {
+  --_bg: var(--dup-button-primary-negative-background-color);
+  --_border: var(--dup-button-primary-negative-border-color);
+  --_color: var(--dup-button-primary-negative-color);
+  --_bg-hover: var(--dup-button-primary-negative-hover-background-color);
+  --_border-hover: var(--dup-button-primary-negative-hover-border-color);
+  --_color-hover: var(--dup-button-primary-negative-hover-color);
+  --_bg-active: var(--dup-button-primary-negative-active-background-color);
+  --_border-active: var(--dup-button-primary-negative-active-border-color);
+  --_color-active: var(--dup-button-primary-negative-active-color);
+}
+
+.dup-button--secondary {
+  --_bg: var(--dup-button-secondary-background-color);
+  --_border: var(--dup-button-secondary-border-color);
+  --_color: var(--dup-button-secondary-color);
+  --_bg-hover: var(--dup-button-secondary-hover-background-color);
+  --_border-hover: var(--dup-button-secondary-hover-border-color);
+  --_color-hover: var(--dup-button-secondary-hover-color);
+  --_bg-active: var(--dup-button-secondary-active-background-color);
+  --_border-active: var(--dup-button-secondary-active-border-color);
+  --_color-active: var(--dup-button-secondary-active-color);
+  --_bg-disabled: var(--dup-button-secondary-disabled-background-color);
+  --_border-disabled: var(--dup-button-secondary-disabled-border-color);
+  --_color-disabled: var(--dup-button-secondary-disabled-color);
+  border-width: var(--dup-button-secondary-border-width);
+  font-weight: var(--dup-button-secondary-font-weight);
+}
+.dup-button--secondary.dup-button--positive {
+  --_bg: var(--dup-button-secondary-positive-background-color);
+  --_border: var(--dup-button-secondary-positive-border-color);
+  --_color: var(--dup-button-secondary-positive-color);
+  --_bg-hover: var(--dup-button-secondary-positive-hover-background-color);
+  --_border-hover: var(--dup-button-secondary-positive-hover-border-color);
+  --_color-hover: var(--dup-button-secondary-positive-hover-color);
+  --_bg-active: var(--dup-button-secondary-positive-active-background-color);
+  --_border-active: var(--dup-button-secondary-positive-active-border-color);
+  --_color-active: var(--dup-button-secondary-positive-active-color);
+}
+.dup-button--secondary.dup-button--negative {
+  --_bg: var(--dup-button-secondary-negative-background-color);
+  --_border: var(--dup-button-secondary-negative-border-color);
+  --_color: var(--dup-button-secondary-negative-color);
+  --_bg-hover: var(--dup-button-secondary-negative-hover-background-color);
+  --_border-hover: var(--dup-button-secondary-negative-hover-border-color);
+  --_color-hover: var(--dup-button-secondary-negative-hover-color);
+  --_bg-active: var(--dup-button-secondary-negative-active-background-color);
+  --_border-active: var(--dup-button-secondary-negative-active-border-color);
+  --_color-active: var(--dup-button-secondary-negative-active-color);
+}
+
+.dup-button--subtle {
+  --_bg: var(--dup-button-subtle-background-color);
+  --_border: var(--dup-button-subtle-border-color);
+  --_color: var(--dup-button-subtle-color);
+  --_bg-hover: var(--dup-button-subtle-hover-background-color);
+  --_border-hover: var(--dup-button-subtle-hover-border-color);
+  --_color-hover: var(--dup-button-subtle-hover-color);
+  --_bg-active: var(--dup-button-subtle-active-background-color);
+  --_border-active: var(--dup-button-subtle-active-border-color);
+  --_color-active: var(--dup-button-subtle-active-color);
+  --_bg-disabled: var(--dup-button-subtle-disabled-background-color);
+  --_border-disabled: var(--dup-button-subtle-disabled-border-color);
+  --_color-disabled: var(--dup-button-subtle-disabled-color);
+  border-width: var(--dup-button-subtle-border-width);
+  font-weight: var(--dup-button-subtle-font-weight);
+}
+.dup-button--subtle.dup-button--positive {
+  --_bg: var(--dup-button-subtle-positive-background-color);
+  --_border: var(--dup-button-subtle-positive-border-color);
+  --_color: var(--dup-button-subtle-positive-color);
+  --_bg-hover: var(--dup-button-subtle-positive-hover-background-color);
+  --_border-hover: var(--dup-button-subtle-positive-hover-border-color);
+  --_color-hover: var(--dup-button-subtle-positive-hover-color);
+  --_bg-active: var(--dup-button-subtle-positive-active-background-color);
+  --_border-active: var(--dup-button-subtle-positive-active-border-color);
+  --_color-active: var(--dup-button-subtle-positive-active-color);
+}
+.dup-button--subtle.dup-button--negative {
+  --_bg: var(--dup-button-subtle-negative-background-color);
+  --_border: var(--dup-button-subtle-negative-border-color);
+  --_color: var(--dup-button-subtle-negative-color);
+  --_bg-hover: var(--dup-button-subtle-negative-hover-background-color);
+  --_border-hover: var(--dup-button-subtle-negative-hover-border-color);
+  --_color-hover: var(--dup-button-subtle-negative-hover-color);
+  --_bg-active: var(--dup-button-subtle-negative-active-background-color);
+  --_border-active: var(--dup-button-subtle-negative-active-border-color);
+  --_color-active: var(--dup-button-subtle-negative-active-color);
+}
