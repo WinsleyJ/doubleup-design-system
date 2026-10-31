@@ -1,0 +1,65 @@
+{
+  "$description": "Paragraph (NL DS Candidate: nl.paragraph.*).",
+  "dup": {
+    "paragraph": {
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.default.color-document}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "basis.color.default.bg-document",
+              "use": "text"
+            }
+          ]
+        }
+      },
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{basis.text.font-family.default}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{basis.text.font-size.md}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{basis.text.font-weight.default}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{basis.text.line-height.md}"
+      },
+      "margin-block-end": {
+        "$type": "dimension",
+        "$value": "{basis.space.text.md}"
+      },
+      "margin-block-start": {
+        "$type": "dimension",
+        "$value": "{basis.space.none}"
+      },
+      "lead": {
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.lg}"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.text.font-weight.default}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.lg}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.lg}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.none}"
+        }
+      }
+    }
+  }
+}

@@ -125,3 +125,13 @@ export const allTokens = (tokens) => {
   walk(tokens, []);
   return out;
 };
+
+/** Laag van een tokenpad: 'brand' | 'common' | 'component'. dup.heading.font-stretch is common; dup.heading.level-* is component. */
+const COMMON_DUP = ['color', 'duration', 'easing', 'opacity', 'text'];
+export const layerOf = (path) => {
+  const [r, second, third] = path.split('.');
+  if (r === 'brand') return 'brand';
+  if (r === 'basis') return 'common';
+  if (COMMON_DUP.includes(second) || (second === 'heading' && !third?.startsWith('level-'))) return 'common';
+  return 'component';
+};

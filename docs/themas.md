@@ -1,10 +1,11 @@
 # Thema's
 
-| Thema             | Doel                                            | Accent                                             | Lettertype                   | Erft van   |
-| ----------------- | ----------------------------------------------- | -------------------------------------------------- | ---------------------------- | ---------- |
-| `doubleup`        | Huisstijl DoubleUP (productie)                  | Zuurlime `#c6f432`                                 | Archivo, koppen 118% breed   | —          |
-| `showcase-blauw`  | Demo: laten zien wat een andere brand-laag doet | Elektrisch blauw `#2f5bff`; info → cyaan `#0891b2` | Mona Sans, koppen 115% breed | `doubleup` |
-| `showcase-oranje` | Demo                                            | Signaaloranje `#ff5a1f`                            | Bricolage Grotesque, 100%    | `doubleup` |
+| Thema             | Doel                                                                | Accent                                             | Lettertype                                   | Erft van   |
+| ----------------- | ------------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------- | ---------- |
+| `doubleup`        | Huisstijl DoubleUP (productie)                                      | Zuurlime `#c6f432`                                 | Archivo, koppen 118% breed                   | —          |
+| `showcase-blauw`  | Demo: laten zien wat een andere brand-laag doet                     | Elektrisch blauw `#2f5bff`; info → cyaan `#0891b2` | Mona Sans, koppen 115% breed                 | `doubleup` |
+| `showcase-oranje` | Demo                                                                | Signaaloranje `#ff5a1f`                            | Bricolage Grotesque, 100%                    | `doubleup` |
+| `voorbeeld`       | Proefthema: bewijst dat alleen een brand-laag nodig is (erft niets) | Groenblauw `#0f766e`, warm neutraal `#231a14`      | Source Serif 4; strakke hoeken, geen pilvorm | —          |
 
 Alle thema's zijn tegelijk te laden (CSS per `[data-theme="…"]`); zo kan een showcase-pagina live wisselen.
 

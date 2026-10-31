@@ -1,0 +1,23 @@
+{
+  "$description": "Markering in lopende tekst (NL DS Candidate: nl.mark.*).",
+  "dup": {
+    "mark": {
+      "background-color": {
+        "$type": "color",
+        "$value": "{dup.color.highlight.bg-solid}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{dup.color.highlight.color-on-solid}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "dup.mark.background-color",
+              "use": "text"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

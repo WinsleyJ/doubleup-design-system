@@ -1,0 +1,28 @@
+{
+  "$description": "Typografie voorbeeld. Fontbestanden: @doubleup/fonts/source-serif-4.css",
+  "brand": {
+    "font-family": {
+      "$type": "fontFamily",
+      "display": {
+        "$value": ["Source Serif 4 Variable", "Georgia", "Cambria", "Times New Roman", "serif"],
+        "$description": "Source Serif 4: klassiek, met optische grootte"
+      },
+      "body": {
+        "$value": ["Source Serif 4 Variable", "Georgia", "Cambria", "Times New Roman", "serif"]
+      },
+      "mono": {
+        "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", "monospace"]
+      }
+    },
+    "font-stretch": {
+      "$type": "fontStretch",
+      "$description": "CSS font-stretch (percentage); geen standaard DTCG-type",
+      "normal": {
+        "$value": "100%"
+      },
+      "display": {
+        "$value": "100%"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$description": "Foutmelding bij een formulierveld (NL DS Candidate: nl.form-field-error-message.*).",
+  "dup": {
+    "form-field-error-message": {
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.negative.color-default}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "basis.color.default.bg-document",
+              "use": "text"
+            }
+          ]
+        }
+      },
+      "column-gap": {
+        "$type": "dimension",
+        "$value": "{basis.space.column.xs}"
+      },
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{basis.text.font-family.default}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{basis.text.font-size.sm}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{basis.text.font-weight.bold}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{basis.text.line-height.sm}"
+      },
+      "margin-block-end": {
+        "$type": "dimension",
+        "$value": "{basis.space.text.xs}"
+      },
+      "margin-block-start": {
+        "$type": "dimension",
+        "$value": "{basis.space.text.2xs}"
+      },
+      "icon": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.negative.color-default}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{basis.size.icon.sm}"
+        }
+      }
+    }
+  }
+}

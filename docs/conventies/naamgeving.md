@@ -21,12 +21,14 @@ Gebaseerd op het projectdocument _Design Tokens_ (NL Design System-afspraken) en
 2. **Block** (verplicht): component, bv. `button`, `link`
 3. **Element** (optioneel): onderdeel, bv. `icon`, `label`
 4. **Modifier** (optioneel), in deze volgorde:
-   1. Appearance: `large`, `primary-action`, `subtle`, `negative`, …
+   1. Appearance: `primary`, `secondary`, `subtle`, `positive`, `negative`, … (namen volgen NL DS Candidate waar een tegenhanger bestaat)
    2. Component state: `checked`, `disabled`, `indeterminate`, `invalid`, …
    3. User action state: `active`, `focus`, `focus-visible`, `hover`
 5. **Property** (verplicht): CSS-property, bv. `color`, `background-color`, `font-weight`
 
-Voorbeeld: `dup.button.primary-action.disabled.background-color`
+Voorbeeld: `dup.button.primary.disabled.background-color` (NL DS Candidate: `nl.button.primary.disabled.background-color`)
+
+Heeft een component een NL DS Candidate-tegenhanger, dan nemen we diens tokennamen over met prefix `dup` (button, link, heading, paragraph, form-field-*, text-input, alert, skip-link, mark). Eigen componenten (card, navigation) volgen dezelfde opbouw.
 
 ## Schrijfwijze
 

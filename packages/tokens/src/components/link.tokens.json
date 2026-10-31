@@ -1,0 +1,92 @@
+{
+  "$description": "Link (NL DS Candidate: nl.link.*).",
+  "dup": {
+    "link": {
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.action-1.color-default}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "basis.color.default.bg-document",
+              "use": "text"
+            },
+            {
+              "against": "basis.color.default.bg-subtle",
+              "use": "text"
+            }
+          ]
+        }
+      },
+      "text-decoration-color": {
+        "$type": "color",
+        "$value": "{dup.color.accent-1.bg-solid}",
+        "$description": "Decoratief: onderstreping in de accentkleur"
+      },
+      "text-decoration-line": {
+        "$type": "textDecorationLine",
+        "$value": "underline"
+      },
+      "text-decoration-thickness": {
+        "$type": "dimension",
+        "$value": "{basis.border-width.md}"
+      },
+      "text-underline-offset": {
+        "$type": "dimension",
+        "$value": "0.2em"
+      },
+      "hover": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.action-1.color-hover}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "text-decoration-line": {
+          "$type": "textDecorationLine",
+          "$value": "underline"
+        },
+        "text-decoration-thickness": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.lg}"
+        }
+      },
+      "active": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.action-1.color-active}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        }
+      },
+      "current": {
+        "cursor": {
+          "$type": "cursor",
+          "$value": "default"
+        }
+      },
+      "disabled": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.disabled.color-subtle}"
+        },
+        "cursor": {
+          "$type": "cursor",
+          "$value": "not-allowed"
+        }
+      }
+    }
+  }
+}

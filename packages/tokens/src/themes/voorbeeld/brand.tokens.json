@@ -1,0 +1,213 @@
+{
+  "$description": "Brand-laag proefthema voorbeeld: bewust anders dan doubleup (strakke hoeken, krappere ruimte, zachtere schaduwen, andere typeschaal).",
+  "brand": {
+    "space": {
+      "$type": "dimension",
+      "0": {
+        "$value": "0rem"
+      },
+      "50": {
+        "$value": "0.125rem",
+        "$description": "2px"
+      },
+      "100": {
+        "$value": "0.25rem",
+        "$description": "4px"
+      },
+      "200": {
+        "$value": "0.5rem",
+        "$description": "8px"
+      },
+      "300": {
+        "$value": "0.75rem",
+        "$description": "12px"
+      },
+      "400": {
+        "$value": "1rem",
+        "$description": "16px"
+      },
+      "500": {
+        "$value": "1.5rem",
+        "$description": "24px"
+      },
+      "600": {
+        "$value": "2rem",
+        "$description": "32px"
+      },
+      "700": {
+        "$value": "3rem",
+        "$description": "48px"
+      },
+      "800": {
+        "$value": "4rem",
+        "$description": "64px"
+      },
+      "900": {
+        "$value": "6rem",
+        "$description": "96px"
+      },
+      "1000": {
+        "$value": "8rem",
+        "$description": "128px"
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "none": {
+        "$value": "0rem"
+      },
+      "s": {
+        "$value": "0.125rem",
+        "$description": "2px"
+      },
+      "m": {
+        "$value": "0.25rem",
+        "$description": "4px"
+      },
+      "l": {
+        "$value": "0.375rem",
+        "$description": "6px"
+      },
+      "pill": {
+        "$value": "0.25rem",
+        "$description": "Bewust géén pilvorm: rechthoekige knoppen"
+      }
+    },
+    "border-width": {
+      "$type": "dimension",
+      "s": {
+        "$value": "1px"
+      },
+      "m": {
+        "$value": "1px"
+      },
+      "l": {
+        "$value": "2px"
+      }
+    },
+    "opacity": {
+      "$type": "number",
+      "subtle": {
+        "$value": 0.5
+      },
+      "disabled": {
+        "$value": 0.5
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "s": {
+        "$value": {
+          "color": "#231a1410",
+          "offsetX": "0px",
+          "offsetY": "1px",
+          "blur": "1px",
+          "spread": "0px"
+        }
+      },
+      "m": {
+        "$value": {
+          "color": "#231a1414",
+          "offsetX": "0px",
+          "offsetY": "2px",
+          "blur": "6px",
+          "spread": "0px"
+        }
+      },
+      "l": {
+        "$value": {
+          "color": "#231a141a",
+          "offsetX": "0px",
+          "offsetY": "8px",
+          "blur": "24px",
+          "spread": "0px"
+        }
+      }
+    },
+    "duration": {
+      "$type": "duration",
+      "fast": {
+        "$value": "80ms"
+      },
+      "normal": {
+        "$value": "160ms"
+      },
+      "slow": {
+        "$value": "240ms"
+      }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard": {
+        "$value": [0.4, 0, 0.2, 1]
+      }
+    },
+    "font-weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 650
+      },
+      "black": {
+        "$value": 700
+      }
+    },
+    "line-height": {
+      "$type": "number",
+      "tight": {
+        "$value": 1.15
+      },
+      "snug": {
+        "$value": 1.35
+      },
+      "normal": {
+        "$value": 1.6
+      }
+    },
+    "font-size": {
+      "$type": "dimension",
+      "$description": "Rustigere schaal (≈1,2): 17 → 18px basis.",
+      "sm": {
+        "$value": "clamp(0.875rem, 0.86rem + 0.07vw, 0.9375rem)"
+      },
+      "md": {
+        "$value": "clamp(1.0625rem, 1.04rem + 0.11vw, 1.125rem)"
+      },
+      "lg": {
+        "$value": "clamp(1.25rem, 1.2rem + 0.22vw, 1.375rem)"
+      },
+      "xl": {
+        "$value": "clamp(1.5rem, 1.42rem + 0.35vw, 1.75rem)"
+      },
+      "2xl": {
+        "$value": "clamp(1.75rem, 1.6rem + 0.65vw, 2.25rem)"
+      },
+      "3xl": {
+        "$value": "clamp(2.1rem, 1.85rem + 1.1vw, 2.85rem)"
+      },
+      "4xl": {
+        "$value": "clamp(2.5rem, 2.1rem + 1.75vw, 3.6rem)"
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "pointer-target": {
+        "$value": "2.75rem"
+      },
+      "page": {
+        "$value": "68rem"
+      },
+      "measure": {
+        "$value": "36rem"
+      }
+    }
+  }
+}
