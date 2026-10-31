@@ -1,0 +1,93 @@
+{
+  "$description": "Hoofdnavigatie (eigen dup-component). Huidige pagina: aria-current=\"page\" → current.",
+  "dup": {
+    "navigation": {
+      "background-color": {
+        "$type": "color",
+        "$value": "{basis.color.default.bg-document}"
+      },
+      "border-block-end-color": {
+        "$type": "color",
+        "$value": "{basis.color.default.border-subtle}"
+      },
+      "border-block-end-width": {
+        "$type": "dimension",
+        "$value": "{basis.border-width.sm}"
+      },
+      "column-gap": {
+        "$type": "dimension",
+        "$value": "{basis.space.column.xl}"
+      },
+      "padding-block": {
+        "$type": "dimension",
+        "$value": "{basis.space.block.md}"
+      },
+      "padding-inline": {
+        "$type": "dimension",
+        "$value": "{basis.space.inline.xl}"
+      },
+      "link": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "dup.navigation.background-color",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{dup.text.font-weight.semibold}"
+        },
+        "text-decoration-line": {
+          "$type": "textDecorationLine",
+          "$value": "none"
+        },
+        "hover": {
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.action-1.color-hover}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.navigation.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "text-decoration-line": {
+            "$type": "textDecorationLine",
+            "$value": "underline"
+          }
+        },
+        "current": {
+          "font-weight": {
+            "$type": "fontWeight",
+            "$value": "{basis.text.font-weight.bold}"
+          },
+          "text-decoration-color": {
+            "$type": "color",
+            "$value": "{dup.color.accent-1.bg-solid}"
+          },
+          "text-decoration-line": {
+            "$type": "textDecorationLine",
+            "$value": "underline"
+          },
+          "text-decoration-thickness": {
+            "$type": "dimension",
+            "$value": "{basis.border-width.lg}"
+          },
+          "text-underline-offset": {
+            "$type": "dimension",
+            "$value": "0.4em"
+          }
+        }
+      }
+    }
+  }
+}

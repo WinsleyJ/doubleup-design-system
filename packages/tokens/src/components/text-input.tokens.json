@@ -1,0 +1,223 @@
+{
+  "$description": "Tekstinvoerveld (NL DS Candidate: nl.text-input.*). Waarden komen uit basis.form-control.",
+  "dup": {
+    "text-input": {
+      "background-color": {
+        "$type": "color",
+        "$value": "{basis.form-control.background-color}"
+      },
+      "border-color": {
+        "$type": "color",
+        "$value": "{basis.form-control.border-color}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "basis.color.default.bg-document",
+              "use": "non-text"
+            }
+          ]
+        }
+      },
+      "border-radius": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.border-radius}"
+      },
+      "border-width": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.border-width}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{basis.form-control.color}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "dup.text-input.background-color",
+              "use": "text"
+            }
+          ]
+        }
+      },
+      "column-gap": {
+        "$type": "dimension",
+        "$value": "{basis.space.column.xs}"
+      },
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{basis.form-control.font-family}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.font-size}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{basis.form-control.font-weight}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{basis.form-control.line-height}"
+      },
+      "min-block-size": {
+        "$type": "dimension",
+        "$value": "{basis.pointer-target.min-block-size}"
+      },
+      "padding-block-end": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.padding-block-end}"
+      },
+      "padding-block-start": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.padding-block-start}"
+      },
+      "padding-inline-end": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.padding-inline-end}"
+      },
+      "padding-inline-start": {
+        "$type": "dimension",
+        "$value": "{basis.form-control.padding-inline-start}"
+      },
+      "xs": {
+        "inline-size": {
+          "$type": "dimension",
+          "$value": "6ch"
+        }
+      },
+      "sm": {
+        "inline-size": {
+          "$type": "dimension",
+          "$value": "12ch"
+        }
+      },
+      "md": {
+        "inline-size": {
+          "$type": "dimension",
+          "$value": "24ch"
+        }
+      },
+      "lg": {
+        "inline-size": {
+          "$type": "dimension",
+          "$value": "36ch"
+        }
+      },
+      "xl": {
+        "inline-size": {
+          "$type": "dimension",
+          "$value": "48ch"
+        }
+      },
+      "stretch": {
+        "inline-size": {
+          "$type": "dimension",
+          "$value": "100%"
+        }
+      },
+      "placeholder": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.form-control.placeholder.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "dup.text-input.background-color",
+                "use": "text"
+              }
+            ]
+          }
+        }
+      },
+      "disabled": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.disabled.background-color}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.disabled.border-color}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.form-control.disabled.color}"
+        }
+      },
+      "focus": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.focus.background-color}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.focus.border-color}"
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.form-control.focus.border-width}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.form-control.focus.color}"
+        }
+      },
+      "hover": {
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.hover.border-color}"
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.form-control.hover.border-width}"
+        }
+      },
+      "invalid": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.invalid.background-color}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.invalid.border-color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.form-control.invalid.border-width}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.form-control.invalid.color}"
+        }
+      },
+      "read-only": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.read-only.background-color}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.form-control.read-only.border-color}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.form-control.read-only.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "dup.text-input.read-only.background-color",
+                "use": "text"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

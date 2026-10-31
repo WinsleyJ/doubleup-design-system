@@ -5,7 +5,16 @@
 //  4. Laagregel: component-tokens (dup.<component>) verwijzen niet naar brand.
 // Exit code 1 bij fouten.
 import { createRequire } from 'node:module';
-import { allTokens, getNode, listThemes, loadAllTokens, loadBrandTokens, MODES, readJson } from './lib/themes.mjs';
+import {
+  allTokens,
+  getNode,
+  layerOf,
+  listThemes,
+  loadAllTokens,
+  loadBrandTokens,
+  MODES,
+  readJson,
+} from './lib/themes.mjs';
 
 const require = createRequire(import.meta.url);
 const basisDef = readJson(require.resolve('@nl-design-system-unstable/basis-design-tokens/src/tokens.json'));
@@ -60,11 +69,7 @@ for (const theme of listThemes()) {
         const target = r.slice(1, -1);
         if (!isToken(getNode(tokens, target)))
           errors.push(`${theme}/${mode}: ${path} verwijst naar onbekend token ${r}`);
-        const [rootKey, second] = path.split('.');
-        const isComponent =
-          rootKey === 'dup' && !['color', 'duration', 'easing', 'opacity', 'heading', 'text'].includes(second);
-        if (isComponent && target.startsWith('brand.') && !path.startsWith('dup.')) continue;
-        if (isComponent && target.startsWith('brand.'))
+        if (layerOf(path) === 'component' && target.startsWith('brand.'))
           errors.push(`${theme}/${mode}: component-token ${path} verwijst naar brand (${r}); gebruik common`);
       }
     }

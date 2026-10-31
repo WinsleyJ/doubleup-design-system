@@ -1,0 +1,55 @@
+{
+  "$description": "Skip-link (NL DS Candidate: nl.skip-link.*).",
+  "dup": {
+    "skip-link": {
+      "background-color": {
+        "$type": "color",
+        "$value": "{dup.color.action-1.bg-solid}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{dup.color.action-1.color-on-solid}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "dup.skip-link.background-color",
+              "use": "text"
+            }
+          ]
+        }
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{basis.text.font-size.md}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{basis.text.line-height.md}"
+      },
+      "min-block-size": {
+        "$type": "dimension",
+        "$value": "{basis.pointer-target.min-block-size}"
+      },
+      "min-inline-size": {
+        "$type": "dimension",
+        "$value": "{basis.pointer-target.min-inline-size}"
+      },
+      "padding-block": {
+        "$type": "dimension",
+        "$value": "{basis.space.block.sm}"
+      },
+      "padding-inline": {
+        "$type": "dimension",
+        "$value": "{basis.space.inline.lg}"
+      },
+      "text-decoration-thickness": {
+        "$type": "dimension",
+        "$value": "{basis.border-width.md}"
+      },
+      "text-underline-offset": {
+        "$type": "dimension",
+        "$value": "0.2em"
+      }
+    }
+  }
+}

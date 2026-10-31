@@ -8,7 +8,8 @@
     "./archivo.css": "./archivo.css",
     "./mona-sans.css": "./mona-sans.css",
     "./bricolage-grotesque.css": "./bricolage-grotesque.css",
-    "./files/*": "./files/*"
+    "./files/*": "./files/*",
+    "./source-serif-4.css": "./source-serif-4.css"
   },
   "files": [
     "*.css",
