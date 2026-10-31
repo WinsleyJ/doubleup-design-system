@@ -1,0 +1,29 @@
+{
+  "$description": "Typografie doubleup. Fontbestanden: @doubleup/fonts/archivo.css",
+  "brand": {
+    "font-family": {
+      "$type": "fontFamily",
+      "display": {
+        "$value": ["Archivo Variable", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        "$description": "Archivo: brede, zware koppen sluiten aan op het woordmerk (keuze 31-10-2026)"
+      },
+      "body": {
+        "$value": ["Archivo Variable", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"]
+      },
+      "mono": {
+        "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", "monospace"]
+      }
+    },
+    "font-stretch": {
+      "$type": "fontStretch",
+      "$description": "CSS font-stretch (percentage); geen standaard DTCG-type",
+      "normal": {
+        "$value": "100%"
+      },
+      "display": {
+        "$value": "118%",
+        "$description": "Breedte voor koppen"
+      }
+    }
+  }
+}

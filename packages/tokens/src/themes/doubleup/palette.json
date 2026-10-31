@@ -1,0 +1,31 @@
+{
+  "$description": "Invoer voor scripts/generate-palette.mjs (doubleup).",
+  "colors": {
+    "neutral": {
+      "anchor": "#111318",
+      "anchorStep": 950,
+      "kind": "neutral",
+      "description": "Ink-kleur uit alle positieve logovarianten"
+    },
+    "accent": {
+      "anchor": "#c6f432",
+      "description": "Zuurlime: accent van DoubleUP (keuze 31-10-2026)"
+    },
+    "info": {
+      "anchor": "#2563eb",
+      "description": "Ankerkleur info"
+    },
+    "positive": {
+      "anchor": "#16a34a",
+      "description": "Ankerkleur positief (gelukt)"
+    },
+    "warning": {
+      "anchor": "#d97706",
+      "description": "Ankerkleur waarschuwing"
+    },
+    "negative": {
+      "anchor": "#dc2626",
+      "description": "Ankerkleur negatief (fout)"
+    }
+  }
+}

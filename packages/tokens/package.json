@@ -15,9 +15,11 @@
   ],
   "scripts": {
     "build": "node build/build.mjs",
-    "check": "node scripts/validate-names.mjs"
+    "check": "node scripts/validate-names.mjs && node scripts/check-contrast.mjs",
+    "palette": "node scripts/generate-palette.mjs"
   },
   "devDependencies": {
+    "culori": "4.0.2",
     "style-dictionary": "5.7.1"
   }
 }

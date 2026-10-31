@@ -1,0 +1,31 @@
+{
+  "$description": "Invoer voor scripts/generate-palette.mjs (showcase-blauw).",
+  "colors": {
+    "neutral": {
+      "anchor": "#111318",
+      "anchorStep": 950,
+      "kind": "neutral",
+      "description": "Ink-kleur uit alle positieve logovarianten"
+    },
+    "accent": {
+      "anchor": "#2f5bff",
+      "description": "Elektrisch blauw (showcase)"
+    },
+    "info": {
+      "anchor": "#0891b2",
+      "description": "Ankerkleur info (cyaan, om botsing met blauw accent te voorkomen)"
+    },
+    "positive": {
+      "anchor": "#16a34a",
+      "description": "Ankerkleur positief (gelukt)"
+    },
+    "warning": {
+      "anchor": "#d97706",
+      "description": "Ankerkleur waarschuwing"
+    },
+    "negative": {
+      "anchor": "#dc2626",
+      "description": "Ankerkleur negatief (fout)"
+    }
+  }
+}

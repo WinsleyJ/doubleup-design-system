@@ -1,0 +1,227 @@
+{
+  "$description": "Gegenereerd door scripts/generate-palette.mjs uit palette.json (doubleup). Niet met de hand bewerken.",
+  "brand": {
+    "color": {
+      "$type": "color",
+      "neutral": {
+        "0": {
+          "$value": "#ffffff"
+        },
+        "50": {
+          "$value": "#f6f7f9"
+        },
+        "100": {
+          "$value": "#edeef1"
+        },
+        "200": {
+          "$value": "#dcdee1"
+        },
+        "300": {
+          "$value": "#c5c7cb"
+        },
+        "400": {
+          "$value": "#a9abaf"
+        },
+        "500": {
+          "$value": "#8a8c91"
+        },
+        "600": {
+          "$value": "#6f7177"
+        },
+        "700": {
+          "$value": "#585b60"
+        },
+        "800": {
+          "$value": "#43454b"
+        },
+        "900": {
+          "$value": "#2b2e33"
+        },
+        "950": {
+          "$value": "#111318",
+          "$description": "Ink-kleur uit alle positieve logovarianten"
+        }
+      },
+      "accent": {
+        "50": {
+          "$value": "#eeffcd"
+        },
+        "100": {
+          "$value": "#dffca1"
+        },
+        "200": {
+          "$value": "#c6f432",
+          "$description": "Zuurlime: accent van DoubleUP (keuze 31-10-2026)"
+        },
+        "300": {
+          "$value": "#afdb00"
+        },
+        "400": {
+          "$value": "#96bc00"
+        },
+        "500": {
+          "$value": "#7b9a00"
+        },
+        "600": {
+          "$value": "#637d00"
+        },
+        "700": {
+          "$value": "#4f6400"
+        },
+        "800": {
+          "$value": "#3c4d00"
+        },
+        "900": {
+          "$value": "#273300"
+        },
+        "950": {
+          "$value": "#161e00"
+        }
+      },
+      "info": {
+        "50": {
+          "$value": "#f3f7ff"
+        },
+        "100": {
+          "$value": "#e6efff"
+        },
+        "200": {
+          "$value": "#cddfff"
+        },
+        "300": {
+          "$value": "#aac8ff"
+        },
+        "400": {
+          "$value": "#7da9ff"
+        },
+        "500": {
+          "$value": "#4a85ff"
+        },
+        "600": {
+          "$value": "#2563eb",
+          "$description": "Ankerkleur info"
+        },
+        "700": {
+          "$value": "#164dc7"
+        },
+        "800": {
+          "$value": "#0b399f"
+        },
+        "900": {
+          "$value": "#022373"
+        },
+        "950": {
+          "$value": "#00124c"
+        }
+      },
+      "positive": {
+        "50": {
+          "$value": "#ecfcee"
+        },
+        "100": {
+          "$value": "#dcf7e0"
+        },
+        "200": {
+          "$value": "#beecc5"
+        },
+        "300": {
+          "$value": "#94dba1"
+        },
+        "400": {
+          "$value": "#60c477"
+        },
+        "500": {
+          "$value": "#16a34a",
+          "$description": "Ankerkleur positief (gelukt)"
+        },
+        "600": {
+          "$value": "#00893a"
+        },
+        "700": {
+          "$value": "#006e2d"
+        },
+        "800": {
+          "$value": "#005421"
+        },
+        "900": {
+          "$value": "#003914"
+        },
+        "950": {
+          "$value": "#002209"
+        }
+      },
+      "warning": {
+        "50": {
+          "$value": "#fff5ed"
+        },
+        "100": {
+          "$value": "#ffeadb"
+        },
+        "200": {
+          "$value": "#ffd5b5"
+        },
+        "300": {
+          "$value": "#f9b785"
+        },
+        "400": {
+          "$value": "#e9944d"
+        },
+        "500": {
+          "$value": "#d97706",
+          "$description": "Ankerkleur waarschuwing"
+        },
+        "600": {
+          "$value": "#a85a00"
+        },
+        "700": {
+          "$value": "#884800"
+        },
+        "800": {
+          "$value": "#693600"
+        },
+        "900": {
+          "$value": "#472300"
+        },
+        "950": {
+          "$value": "#2c1300"
+        }
+      },
+      "negative": {
+        "50": {
+          "$value": "#fff4f2"
+        },
+        "100": {
+          "$value": "#ffe9e5"
+        },
+        "200": {
+          "$value": "#ffd2cb"
+        },
+        "300": {
+          "$value": "#ffb0a6"
+        },
+        "400": {
+          "$value": "#ff7f72"
+        },
+        "500": {
+          "$value": "#f3413b"
+        },
+        "600": {
+          "$value": "#dc2626",
+          "$description": "Ankerkleur negatief (fout)"
+        },
+        "700": {
+          "$value": "#ad000e"
+        },
+        "800": {
+          "$value": "#860008"
+        },
+        "900": {
+          "$value": "#5d0004"
+        },
+        "950": {
+          "$value": "#3a0002"
+        }
+      }
+    }
+  }
+}

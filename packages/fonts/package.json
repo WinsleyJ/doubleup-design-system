@@ -1,0 +1,18 @@
+{
+  "name": "@doubleup/fonts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Zelf gehoste open-source fonts (woff2, latin) voor de thema's van het DoubleUP Design System.",
+  "license": "OFL-1.1",
+  "exports": {
+    "./archivo.css": "./archivo.css",
+    "./mona-sans.css": "./mona-sans.css",
+    "./bricolage-grotesque.css": "./bricolage-grotesque.css",
+    "./files/*": "./files/*"
+  },
+  "files": [
+    "*.css",
+    "files",
+    "licenses"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$description": "Typografie showcase-blauw. Fontbestanden: @doubleup/fonts/mona-sans.css",
+  "brand": {
+    "font-family": {
+      "$type": "fontFamily",
+      "display": {
+        "$value": ["Mona Sans Variable", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        "$description": "Mona Sans (showcase)"
+      },
+      "body": {
+        "$value": ["Mona Sans Variable", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"]
+      },
+      "mono": {
+        "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", "monospace"]
+      }
+    },
+    "font-stretch": {
+      "$type": "fontStretch",
+      "$description": "CSS font-stretch (percentage); geen standaard DTCG-type",
+      "normal": {
+        "$value": "100%"
+      },
+      "display": {
+        "$value": "115%",
+        "$description": "Breedte voor koppen"
+      }
+    }
+  }
+}
