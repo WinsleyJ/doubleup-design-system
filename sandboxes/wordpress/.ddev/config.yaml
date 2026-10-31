@@ -1,0 +1,13 @@
+# DDEV-sandbox voor de Cornerstone-landing (M1). Zie docs/adr/005-ddev-lokale-omgevingen.md
+name: dup-wordpress
+type: wordpress
+docroot: web
+php_version: '8.3'
+webserver_type: nginx-fpm
+database:
+  type: mariadb
+  version: '10.11'
+nodejs_version: '22'
+xdebug_enabled: false
+upload_dirs:
+  - wp-content/uploads

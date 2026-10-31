@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./node_modules/**)",
+      "Read(./**/node_modules/**)",
+      "Read(./packages/*/dist/**)",
+      "Read(./**/storybook-static/**)",
+      "Read(./sandboxes/*/web/**)",
+      "Read(./sandboxes/*/vendor-private/**)",
+      "Read(./pnpm-lock.yaml)"
+    ]
+  }
+}
