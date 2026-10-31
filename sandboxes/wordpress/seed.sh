@@ -33,11 +33,14 @@ else
   echo "ℹ vendor-private/pro.zip niet gevonden — Pro wordt overgeslagen (nodig vanaf stap 4)."
 fi
 
-# Vanaf stap 4: child theme en sync-plugin uit de monorepo koppelen, activeren en tokens syncen.
-# ln -sfn ../../../../adapters/cornerstone/child-theme web/wp-content/themes/dup-pro-child
-# ln -sfn ../../../../adapters/cornerstone/plugin     web/wp-content/plugins/dup-tokens-sync
-# ddev wp theme activate dup-pro-child
-# ddev wp plugin activate dup-tokens-sync
-# ddev wp dup tokens sync --theme=doubleup
+# Child theme en sync-plugin komen uit de monorepo via .ddev/docker-compose.dup.yaml.
+# Eerst bouwen (vanuit de repo-root): pnpm build
+if ddev wp theme is-installed pro >/dev/null 2>&1; then
+  ddev wp theme activate dup-pro-child
+  ddev wp plugin activate dup-tokens-sync
+  ddev wp dup tokens sync
+else
+  echo "ℹ Pro niet geïnstalleerd: child theme en sync overgeslagen."
+fi
 
 echo "✔ Sandbox klaar: $SITE_URL (admin: $ADMIN_USER)"

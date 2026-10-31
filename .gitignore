@@ -15,6 +15,12 @@ sandboxes/*/.ddev/.homeadditions
 sandboxes/*/.ddev/db_snapshots/
 sandboxes/*/.ddev/import-db/
 
+# Cornerstone-adapter: gebouwde assets (adapters/cornerstone/build.mjs)
+adapters/cornerstone/child-theme/assets/css/
+adapters/cornerstone/child-theme/assets/fonts/
+adapters/cornerstone/child-theme/assets/tokens/
+adapters/cornerstone/child-theme/assets/cornerstone/
+
 # Commerciële software: nooit committen
 sandboxes/*/vendor-private/
 **/themes/pro/

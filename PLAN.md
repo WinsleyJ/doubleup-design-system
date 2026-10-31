@@ -318,11 +318,11 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 ### Stap 4 — Cornerstone-landing (M1) (± 4–5 sessies)
 
-- [ ] **Spikes (eerst!, op basis van theme.co docs, changelogs en forum):** opslag Global Colors/Fonts/Variables · `var()` in global colors · Theme Options-export-formaat · component-export-formaat. Resultaat → `docs/adapters/cornerstone.md`
-- [ ] `sandboxes/wordpress` (DDEV) uitbreiden met Pro (licentie lokaal, nooit in repo) + seed-script
-- [ ] Child theme `dup-pro-child`: laden thema-CSS, `data-theme`, kleurmodus + toggle, basistypografie
-- [ ] Plugin `dup-tokens-sync` + WP-CLI-commando
-- [ ] Style Dictionary-format(s) voor Cornerstone (colors/fonts/variables JSON)
+- [x] **Spikes** (theme.co docs, changelogs, forum): Global Colors/Fonts/Variables, `var()`/`light-dark()` in global colors, componenten/export → `docs/adapters/cornerstone.md`, ADR-007 (voorgesteld)
+- [ ] `sandboxes/wordpress` (DDEV) met Pro — _mounts voor child theme/plugin klaar (`.ddev/docker-compose.dup.yaml`); wacht op Pro-zip_
+- [x] Child theme `dup-pro-child`: laden fonts + thema-CSS + `dup.css`, `data-theme`, kleurmodus + wisselaar `[dup_color_scheme_toggle]` — _code klaar, test met Pro open (T1)_
+- [x] Plugin `dup-tokens-sync` + `wp dup tokens sync|status` (Global Colors + Variables, idempotent, unittest) — _test met Pro open (T4)_
+- [x] Cornerstone-invoer `globals.json` gegenereerd door `adapters/cornerstone/build.mjs` (i.p.v. aparte SD-format)
 - [ ] Cornerstone Components + Parameters voor de componentset uit stap 2/3
 - [ ] Demopagina's: homepage, contentpagina, formulier — in light en dark
 - [ ] **Thema-showcase** op de DoubleUP-site: themawisselaar (`doubleup` / `showcase-blauw` / `showcase-oranje`) × light/dark op dezelfde Cornerstone-pagina — laat zien wat een brand-laag doet
@@ -418,16 +418,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                                                        | Laatste update | Notities                                                                                       |
-| ----------------------------------- | ------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                                      |
-| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                                        |
-| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld                   |
-| 3 Referentiecomponenten + Storybook | ✅ klaar (deel 2 op `stap-3-docs`)                            | 31-10-2026     | Docs-pagina's + Design System-artifact; 160 axe-controles groen                                |
-| 4 Cornerstone-landing               | ⬜ volgende                                                   |                | Begint met spikes (Global Colors/Fonts/Variables, component-export) op basis van theme.co docs |
-| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                                                |
+| Stap                                | Status                                                        | Laatste update | Notities                                                                           |
+| ----------------------------------- | ------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                          |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                            |
+| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld       |
+| 3 Referentiecomponenten + Storybook | ✅ klaar (deel 2 op `stap-3-docs`)                            | 31-10-2026     | Docs-pagina's + Design System-artifact; 160 axe-controles groen                    |
+| 4 Cornerstone-landing               | 🔄 deel 1 klaar (branch `stap-4-cornerstone`)                 | 31-10-2026     | Spikes + child theme + sync-plugin; geblokkeerd op Pro-zip en keuze componentroute |
+| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                                    |
 
-**Volgende actie:** PR `stap-3-docs` mergen; daarna stap 4 (nieuwe branch): Cornerstone-spikes op basis van theme.co-documentatie, changelogs en forum. Benodigd van Winsley: Themeco Pro-zip (lokaal, niet in git) voor de DDEV-sandbox.
+**Volgende actie:** Winsley: (1) keuze componentroute (ADR-007), (2) Pro-zip aanleveren (lokaal + privé CI). Daarna sandboxtests T1–T9 en de Cornerstone Components.
 
 ---
 
@@ -469,6 +469,8 @@ Gerangschikt op impact:
 | 32  | 31-10-2026 | Storybook 10.6.5 + Vite 7.3.7 + Playwright 1.63.0 + axe-core 4.14.0 vastgepind                                                                                                                                                                              | Claude                             |
 | 33  | 31-10-2026 | Design System-artifact = alleen-lezen kopie van thema `doubleup` (`"editing": "code"`), gegenereerd door `packages/design-system`; sync via `docs/design-system-artifact.md`                                                                                | Claude                             |
 | 34  | 31-10-2026 | Tokens-build draait de contrastcontrole mee (rapport nodig voor Storybook); contrastfout breekt de build                                                                                                                                                    | Claude                             |
+| 35  | 31-10-2026 | Cornerstone-adapter volgens ADR-007 (voorgesteld): child theme + sync-plugin; Global Colors als `var()`-rollen, Global Variables met prefix `ds-`                                                                                                           | Claude → ter review                |
+| 36  | 31-10-2026 | Root `pnpm build`/`check` draaien over de hele workspace (incl. adapters)                                                                                                                                                                                   | Claude                             |
 
 ---
 

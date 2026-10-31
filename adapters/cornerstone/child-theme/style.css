@@ -1,0 +1,12 @@
+/*
+Theme Name:   DUP Pro Child
+Theme URI:    https://github.com/WinsleyJ/doubleup-design-system
+Description:  Child theme voor Themeco Pro die het DoubleUP Design System laadt (tokens, referentiecomponenten, fonts) en het thema/de kleurmodus op <html> zet. Gegenereerd en beheerd vanuit de monorepo.
+Author:       DoubleUP
+Template:     pro
+Version:      0.1.0
+Requires PHP: 8.1
+Text Domain:  dup-pro-child
+*/
+
+/* Stijlen komen uit assets/ (gebouwd door adapters/cornerstone/build.mjs). Hier niets toevoegen. */

@@ -15,11 +15,15 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: pnpm
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: none
       - run: pnpm install --frozen-lockfile
       - run: pnpm format:check
       # Bouwt tokens, icons, referentie-CSS en Storybook (in afhankelijkheidsvolgorde)
       - run: pnpm build
-      # Naamconventie, contract, contrast (tokens) en token-verwijzingen (CSS)
+      # Naamconventie, contract, contrast (tokens), token-verwijzingen (CSS), PHP + merge-test (Cornerstone-adapter)
       - run: pnpm check
       - name: Playwright-browser installeren
         run: pnpm --filter @doubleup/storybook exec playwright install --with-deps chromium

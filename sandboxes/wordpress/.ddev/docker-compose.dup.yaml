@@ -1,0 +1,6 @@
+# Koppelt de Cornerstone-adapter uit de monorepo in de WordPress-container (geen kopie, geen symlink).
+services:
+  web:
+    volumes:
+      - ../../../adapters/cornerstone/child-theme:/var/www/html/web/wp-content/themes/dup-pro-child
+      - ../../../adapters/cornerstone/plugin:/var/www/html/web/wp-content/plugins/dup-tokens-sync

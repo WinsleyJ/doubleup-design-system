@@ -12,6 +12,18 @@ importers:
         specifier: 3.9.10
         version: 3.9.10
 
+  adapters/cornerstone:
+    devDependencies:
+      '@doubleup/css':
+        specifier: workspace:*
+        version: link:../../packages/css
+      '@doubleup/fonts':
+        specifier: workspace:*
+        version: link:../../packages/fonts
+      '@doubleup/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+
   packages/css:
     devDependencies:
       '@doubleup/tokens':

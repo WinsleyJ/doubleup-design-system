@@ -1,0 +1,17 @@
+{
+  "name": "@doubleup/adapter-cornerstone",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Landing van het DoubleUP Design System in Themeco Pro/Cornerstone: child theme dup-pro-child en plugin dup-tokens-sync.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node check.mjs"
+  },
+  "devDependencies": {
+    "@doubleup/css": "workspace:*",
+    "@doubleup/fonts": "workspace:*",
+    "@doubleup/tokens": "workspace:*"
+  }
+}
