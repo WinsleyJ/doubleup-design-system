@@ -1,0 +1,16 @@
+{
+  "$description": "Brand-laag DoubleUP. Stap 0: alleen waarden die direct uit de logo's komen. De volledige schalen volgen in stap 1.",
+  "brand": {
+    "color": {
+      "$type": "color",
+      "neutral": {
+        "0": { "$value": "#ffffff", "$description": "Wit uit de negatieve logovarianten" },
+        "950": { "$value": "#111318", "$description": "Ink-kleur uit alle positieve logovarianten" }
+      }
+    },
+    "opacity": {
+      "$type": "number",
+      "subtle": { "$value": 0.38, "$description": "Dekking van de tweede U in de 'lagen'-logovariant" }
+    }
+  }
+}

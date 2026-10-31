@@ -1,0 +1,23 @@
+{
+  "name": "@doubleup/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Design tokens (brand, common, component) en Style Dictionary-build voor het DoubleUP Design System.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    "./css/*": "./dist/css/*",
+    "./json/*": "./dist/json/*",
+    "./js/*": "./dist/js/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build/build.mjs",
+    "check": "node scripts/validate-names.mjs"
+  },
+  "devDependencies": {
+    "style-dictionary": "5.7.1"
+  }
+}

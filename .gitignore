@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Gegenereerd
+dist/
+storybook-static/
+*.tsbuildinfo
+coverage/
+test-results/
+playwright-report/
+
+# Lokale omgevingen (DDEV): alleen config in git, geen WordPress-core of uploads
+sandboxes/*/web/
+sandboxes/*/.ddev/.homeadditions
+sandboxes/*/.ddev/db_snapshots/
+sandboxes/*/.ddev/import-db/
+
+# Commerciële software: nooit committen
+sandboxes/*/vendor-private/
+**/themes/pro/
+**/plugins/cornerstone/
+*.license
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
