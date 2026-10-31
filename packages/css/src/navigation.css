@@ -1,0 +1,31 @@
+/* Navigation — huidige pagina met aria-current="page". */
+.dup-navigation {
+  background-color: var(--dup-navigation-background-color);
+  border-block-end: var(--dup-navigation-border-block-end-width) solid var(--dup-navigation-border-block-end-color);
+  padding-block: var(--dup-navigation-padding-block);
+  padding-inline: var(--dup-navigation-padding-inline);
+}
+.dup-navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--dup-navigation-column-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dup-navigation__link {
+  color: var(--dup-navigation-link-color);
+  font-weight: var(--dup-navigation-link-font-weight);
+  text-decoration-line: var(--dup-navigation-link-text-decoration-line);
+}
+.dup-navigation__link:hover {
+  color: var(--dup-navigation-link-hover-color);
+  text-decoration-line: var(--dup-navigation-link-hover-text-decoration-line);
+}
+.dup-navigation__link[aria-current='page'] {
+  font-weight: var(--dup-navigation-link-current-font-weight);
+  text-decoration-line: var(--dup-navigation-link-current-text-decoration-line);
+  text-decoration-color: var(--dup-navigation-link-current-text-decoration-color);
+  text-decoration-thickness: var(--dup-navigation-link-current-text-decoration-thickness);
+  text-underline-offset: var(--dup-navigation-link-current-text-underline-offset);
+}

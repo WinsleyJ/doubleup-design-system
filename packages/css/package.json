@@ -1,0 +1,23 @@
+{
+  "name": "@doubleup/css",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Referentiecomponenten (HTML/CSS) van het DoubleUP Design System. Gebruikt alleen component- en common-tokens.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": "./dist/dup.css",
+    "./src/*": "./src/*"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node check-css.mjs"
+  },
+  "devDependencies": {
+    "@doubleup/tokens": "workspace:*"
+  }
+}

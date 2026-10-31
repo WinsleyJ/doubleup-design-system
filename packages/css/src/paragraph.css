@@ -1,0 +1,17 @@
+/* Paragraph — met variant lead (intro). */
+.dup-paragraph {
+  color: var(--dup-paragraph-color);
+  font-family: var(--dup-paragraph-font-family);
+  font-size: var(--dup-paragraph-font-size);
+  font-weight: var(--dup-paragraph-font-weight);
+  line-height: var(--dup-paragraph-line-height);
+  margin-block: var(--dup-paragraph-margin-block-start) var(--dup-paragraph-margin-block-end);
+  max-inline-size: 65ch;
+  text-wrap: pretty;
+}
+.dup-paragraph--lead {
+  font-size: var(--dup-paragraph-lead-font-size);
+  font-weight: var(--dup-paragraph-lead-font-weight);
+  line-height: var(--dup-paragraph-lead-line-height);
+  margin-block: var(--dup-paragraph-lead-margin-block-start) var(--dup-paragraph-lead-margin-block-end);
+}

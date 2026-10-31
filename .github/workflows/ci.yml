@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  tokens:
+  tokens-css-storybook:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,5 +17,20 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm format:check
+      # Bouwt tokens, icons, referentie-CSS en Storybook (in afhankelijkheidsvolgorde)
       - run: pnpm build
+      # Naamconventie, contract, contrast (tokens) en token-verwijzingen (CSS)
       - run: pnpm check
+      - name: Playwright-browser installeren
+        run: pnpm --filter @doubleup/storybook exec playwright install --with-deps chromium
+      # axe-core over alle stories × thema's × kleurmodi
+      - run: pnpm test:a11y
+      - name: Rapporten bewaren
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapporten
+          path: |
+            packages/tokens/dist/reports/
+            packages/tokens/dist/docs/
+            packages/storybook/storybook-static/a11y-report.md

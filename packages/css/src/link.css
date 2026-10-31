@@ -1,0 +1,24 @@
+/* Link — states: hover, active, aria-current="page", aria-disabled. */
+.dup-link {
+  color: var(--dup-link-color);
+  text-decoration-line: var(--dup-link-text-decoration-line);
+  text-decoration-color: var(--dup-link-text-decoration-color);
+  text-decoration-thickness: var(--dup-link-text-decoration-thickness);
+  text-underline-offset: var(--dup-link-text-underline-offset);
+  transition: text-decoration-thickness var(--dup-duration-fast) var(--dup-easing-standard);
+}
+.dup-link:hover {
+  color: var(--dup-link-hover-color);
+  text-decoration-line: var(--dup-link-hover-text-decoration-line);
+  text-decoration-thickness: var(--dup-link-hover-text-decoration-thickness);
+}
+.dup-link:active {
+  color: var(--dup-link-active-color);
+}
+.dup-link[aria-current='page'] {
+  cursor: var(--dup-link-current-cursor);
+}
+.dup-link[aria-disabled='true'] {
+  color: var(--dup-link-disabled-color);
+  cursor: var(--dup-link-disabled-cursor);
+}

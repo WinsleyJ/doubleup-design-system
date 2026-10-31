@@ -20,7 +20,8 @@ Multi-brand design system. Tokens (DTCG) → Style Dictionary v5 → CSS-variabe
 
 ## Commando's
 
-- `pnpm install` · `pnpm build` · `pnpm check` · `pnpm format`
+- `pnpm install` · `pnpm build` · `pnpm check` · `pnpm format` · `pnpm test:a11y` (na build)
+- Storybook lokaal: `pnpm --filter @doubleup/storybook dev`
 - Na wijziging in `palette.json`/`roles.json`: `pnpm --filter @doubleup/tokens generate` (gegenereerde bestanden nooit met de hand bewerken)
 
 ## Waar staat wat
@@ -28,11 +29,12 @@ Multi-brand design system. Tokens (DTCG) → Style Dictionary v5 → CSS-variabe
 - `packages/tokens/src/{themes,common,components}` — bron-tokens
 - `packages/tokens/scripts/` — deterministische checks (gebruik deze i.p.v. handmatig controleren)
 - `docs/adr/` — architectuurbeslissingen · `docs/adapters/` — platform-notities
+- `packages/css/src` — referentiecomponenten · `packages/storybook/stories` — stories
 - `adapters/<platform>/` — platform-landingen · `sandboxes/<platform>/` — DDEV-testomgevingen
 
 ## Niet doen
 
-- Geen bestanden lezen in `dist/`, `node_modules/`, `sandboxes/*/web/` (gegenereerd/extern).
+- Geen bestanden lezen in `dist/`, `node_modules/`, `storybook-static/`, `sandboxes/*/web/` (gegenereerd/extern).
 - Nooit commerciële software (Themeco Pro/Cornerstone) of licentiesleutels committen.
 - Cornerstone-kennis alleen uit theme.co docs/changelog/forum; niet uit oude repo's.
 - Geen adapters voor andere platforms bouwen vóór mijlpaal M1 (alleen notities/ADR).

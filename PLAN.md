@@ -306,10 +306,10 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 ### Stap 3 — Referentiecomponenten + Storybook (± 3 sessies)
 
-- [ ] `packages/css`: componenten als pure HTML/CSS (BEM, `.dup-button--primary-action`), uitsluitend via component-tokens
-- [ ] Storybook (HTML/Vite-framework) met toolbar voor thema × kleurmodus
-- [ ] Pagina's: tokens-overzicht, kleurcontrast-matrix, typografie, componenten met alle states
-- [ ] a11y-addon (axe) in elke story
+- [x] `packages/css`: 12 componenten als pure HTML/CSS (BEM: `.dup-button--primary`), bundel `dist/dup.css`; `check-css` dwingt af: geen `--brand-*`, elke `var()` bestaat als token
+- [x] Storybook 10 (html-vite) met toolbar voor thema (4) × kleurmodus (2); stories per component + volledige voorbeeld-landingspagina
+- [ ] Pagina's: tokens-overzicht, kleurcontrast-matrix, typografie (_deel 2_); componenten met alle states ✅
+- [x] a11y-addon in Storybook + **automatische axe-test** (`pnpm test:a11y`): alle stories × thema's × modi (112 controles), in CI
 
 **Model:** S · O voor review van de componentstructuur
 **DoD:** alle componenten in beide thema's en beide modi zonder axe-fouten.
@@ -421,11 +421,11 @@ Gerangschikt op impact:
 | 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                    |
 | 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                      |
 | 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld |
-| 3 Referentiecomponenten + Storybook | ⬜ volgende                                                   |                | Component-tokens liggen klaar; Storybook toont ook `dist/docs`               |
+| 3 Referentiecomponenten + Storybook | 🔄 deel 1 klaar (branch `stap-3-componenten`)                 | 31-10-2026     | CSS + Storybook + axe-test; open: docs-pagina's, Design System-artifact      |
 | 4 Cornerstone-landing               | ⬜                                                            |                |                                                                              |
 | 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                              |
 
-**Volgende actie:** PR `stap-2-deel-2` mergen; daarna stap 3 op een nieuwe branch vanaf `main`: referentiecomponenten (HTML/CSS) + Storybook met thema- en modewisselaar.
+**Volgende actie:** PR `stap-3-componenten` mergen; daarna stap 3 deel 2 (nieuwe branch): Storybook-pagina's tokens/contrast/typografie + Design System-artifact gegenereerd uit de repo.
 
 ---
 
@@ -462,6 +462,9 @@ Gerangschikt op impact:
 | 27  | 31-10-2026 | Proefthema `voorbeeld` (Source Serif 4, erft niets) blijft als contract-test in de repo                                                                                                                                                                     | Claude                             |
 | 28  | 31-10-2026 | Tokendocumentatie wordt gegenereerd naar `dist/docs` (niet gecommit); Storybook toont haar in stap 3                                                                                                                                                        | Claude                             |
 | 29  | 31-10-2026 | Deel 2 van stap 2 miste de merge van PR #4 (gepusht ná de merge). Opgelost via nieuwe branch `stap-2-deel-2`; werkafspraak § 0.6 toegevoegd                                                                                                                 | Claude, op verzoek Winsley         |
+| 30  | 31-10-2026 | Referentie-CSS mag naast component-tokens ook common gebruiken (`--basis-*`, `--dup-*`: focus, document, motion), nooit `--brand-*`; afgedwongen door `check-css`                                                                                           | Claude                             |
+| 31  | 31-10-2026 | Toegankelijkheidstest via eigen Playwright + axe-core-script over de statische Storybook-build (i.p.v. addon-vitest): deterministisch, test alle thema's × modi, werkt lokaal en in CI                                                                      | Claude                             |
+| 32  | 31-10-2026 | Storybook 10.6.5 + Vite 7.3.7 + Playwright 1.63.0 + axe-core 4.14.0 vastgepind                                                                                                                                                                              | Claude                             |
 
 ---
 
