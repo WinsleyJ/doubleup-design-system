@@ -277,14 +277,14 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 ### Stap 1 — Huisstijl DoubleUP: brand-laag (± 2 sessies)
 
-- [ ] Input meenemen: `docs/verkenningen/2026-10-31-tokens-v0.1.md` (ink-schaal, feedbackkleuren, Archivo als fontkandidaat, vormtaal), omzetten naar brand-slots
-- [ ] Neutral-schaal rond `#111318` (OKLCH-gebaseerd, 0–1000)
-- [ ] 3 accentvoorstellen → jij kiest → accent-schaal 50–950
-- [ ] Feedbackkleuren (positive/negative/warning/info)
-- [ ] Typografie: 2–3 voorstellen voor **self-hosted open-source fonts** (SIL OFL of vergelijkbaar, variable font waar mogelijk, woff2-subsets, `font-display: swap`) → jij kiest → `packages/fonts`; type-schaal (fluid, `clamp()`), line-heights, font-weights
-- [ ] Space-schaal, radius, border-width, opacity (`0.38` uit logo), schaduwen, motion (duration/easing)
+- [x] Input meenemen: `docs/verkenningen/2026-10-31-tokens-v0.1.md` (ink-schaal, feedbackkleuren, Archivo als fontkandidaat, vormtaal), omzetten naar brand-slots
+- [x] Neutral-schaal rond `#111318` (OKLCH-gebaseerd, 0–950; 950 = logokleur) — generator `scripts/generate-palette.mjs` + `palette.json` per thema
+- [ ] 3 accentvoorstellen → jij kiest → accent-schaal 50–950 — _voorstellen klaar (blauw / oranje / lime), wacht op keuze_
+- [x] Feedbackkleuren (positive/negative/warning/info), schalen 50–950
+- [ ] Typografie: 2–3 voorstellen voor **self-hosted open-source fonts** (SIL OFL of vergelijkbaar, variable font waar mogelijk, woff2-subsets, `font-display: swap`) → jij kiest → `packages/fonts`; _voorstellen: Archivo / Mona Sans / Bricolage Grotesque, wacht op keuze_; type-schaal (fluid, `clamp()`), line-heights, font-weights
+- [x] Space-schaal, radius, border-width, opacity (`0.38` uit logo), schaduwen, motion (duration/easing), font-weights, line-heights, vloeiende font-size-schaal (sm–4xl, sluit aan op `basis.text.font-size`)
 - [ ] Logo's en iconen naar `packages/icons`
-- [ ] Visuele huisstijlpagina (Design System-artifact) ter review
+- [ ] Visuele huisstijlpagina (Design System-artifact) ter review — _eerst keuzepagina: https://claude.ai/artifact/XAM3XfMnvkydWqJkA1NJpG; Design System-artifact na keuze_
 
 **Model:** O voor kleur-/typografiekeuzes en schaalopbouw · S voor uitschrijven JSON
 **DoD:** brand-tokens valide DTCG, contrastrapport groen voor alle beoogde tekst/achtergrond-paren.
@@ -412,16 +412,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                     | Laatste update | Notities                                                               |
-| ----------------------------------- | -------------------------- | -------------- | ---------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1) | 31-10-2026     | DDEV nog lokaal te testen                                              |
-| 1 Brand-laag DoubleUP               | ⬜ volgende                | 31-10-2026     | Verkenning v0.1 uit andere sessie beschikbaar als input (niet leidend) |
-| 2 Common/component + build          | ⬜                         |                |                                                                        |
-| 3 Referentiecomponenten + Storybook | ⬜                         |                |                                                                        |
-| 4 Cornerstone-landing               | ⬜                         |                |                                                                        |
-| 5 Kwaliteit & productie             | ⬜                         |                |                                                                        |
+| Stap                                | Status                                        | Laatste update | Notities                                                                                          |
+| ----------------------------------- | --------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                    | 31-10-2026     | DDEV nog lokaal te testen                                                                         |
+| 1 Brand-laag DoubleUP               | 🔄 in uitvoering (branch `stap-1-brand-laag`) | 31-10-2026     | Wacht op keuze accent + lettertype; daarna logo's, contrastcheck in build, Design System-artifact |
+| 2 Common/component + build          | ⬜                                            |                |                                                                                                   |
+| 3 Referentiecomponenten + Storybook | ⬜                                            |                |                                                                                                   |
+| 4 Cornerstone-landing               | ⬜                                            |                |                                                                                                   |
+| 5 Kwaliteit & productie             | ⬜                                            |                |                                                                                                   |
 
-**Volgende actie:** stap 1 — brand-laag DoubleUP: neutral-schaal, 3 accentvoorstellen, 2–3 fontvoorstellen (Archivo is er één van), light + dark.
+**Volgende actie:** Winsley kiest accent (A blauw / B oranje / C lime) en lettertype (A Archivo / B Mona Sans / C Bricolage) via de keuzepagina → Claude rondt stap 1 af.
 
 ---
 
