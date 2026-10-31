@@ -18,6 +18,21 @@ importers:
         specifier: workspace:*
         version: link:../tokens
 
+  packages/design-system:
+    devDependencies:
+      '@doubleup/css':
+        specifier: workspace:*
+        version: link:../css
+      '@doubleup/fonts':
+        specifier: workspace:*
+        version: link:../fonts
+      '@doubleup/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@doubleup/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+
   packages/fonts: {}
 
   packages/icons: {}

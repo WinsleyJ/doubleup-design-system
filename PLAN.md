@@ -287,7 +287,7 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 - [x] Logo's en iconen naar `packages/icons` (generator; 10 originelen + 4 `currentColor`-varianten)
 - [x] Extra: `check-contrast` in `pnpm check` (108 paren: 3 thema's × light/dark), thema-overerving (`extends`), `roles.json` per thema
 - [x] Visuele review via keuzepagina: https://claude.ai/artifact/XAM3XfMnvkydWqJkA1NJpG
-- [ ] ~~Design System-artifact~~ → **verplaatst naar einde stap 3** en dan _gegenereerd uit de repo_ (zie § 10 #22), zodat het geen tweede bron van waarheid wordt
+- [x] ~~Design System-artifact~~ → gemaakt in stap 3, gegenereerd uit de repo: https://claude.ai/artifact/TzCAfqRJN9SWEaehCnJi4s (`docs/design-system-artifact.md`)
 
 **Model:** O voor kleur-/typografiekeuzes en schaalopbouw · S voor uitschrijven JSON
 **DoD:** brand-tokens valide DTCG, contrastrapport groen voor alle beoogde tekst/achtergrond-paren.
@@ -308,11 +308,13 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 - [x] `packages/css`: 12 componenten als pure HTML/CSS (BEM: `.dup-button--primary`), bundel `dist/dup.css`; `check-css` dwingt af: geen `--brand-*`, elke `var()` bestaat als token
 - [x] Storybook 10 (html-vite) met toolbar voor thema (4) × kleurmodus (2); stories per component + volledige voorbeeld-landingspagina
-- [ ] Pagina's: tokens-overzicht, kleurcontrast-matrix, typografie (_deel 2_); componenten met alle states ✅
+- [x] Pagina's: kleurrollen + brand-schalen, contrastmatrix, typografie, ruimte en vorm, doorzoekbaar tokenoverzicht (alle per thema × modus, axe-getest); componenten met alle states
 - [x] a11y-addon in Storybook + **automatische axe-test** (`pnpm test:a11y`): alle stories × thema's × modi (112 controles), in CI
 
 **Model:** S · O voor review van de componentstructuur
-**DoD:** alle componenten in beide thema's en beide modi zonder axe-fouten.
+**DoD:** alle componenten in beide thema's en beide modi zonder axe-fouten. ✅ (4 thema's × 2 modi, 160 controles)
+
+- [x] Extra: Design System-artifact (alleen-lezen, `"editing": "code"`) gegenereerd door `packages/design-system`: https://claude.ai/artifact/TzCAfqRJN9SWEaehCnJi4s
 
 ### Stap 4 — Cornerstone-landing (M1) (± 4–5 sessies)
 
@@ -416,16 +418,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                                                        | Laatste update | Notities                                                                     |
-| ----------------------------------- | ------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                    |
-| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                      |
-| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld |
-| 3 Referentiecomponenten + Storybook | 🔄 deel 1 klaar (branch `stap-3-componenten`)                 | 31-10-2026     | CSS + Storybook + axe-test; open: docs-pagina's, Design System-artifact      |
-| 4 Cornerstone-landing               | ⬜                                                            |                |                                                                              |
-| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                              |
+| Stap                                | Status                                                        | Laatste update | Notities                                                                                       |
+| ----------------------------------- | ------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                                    | 31-10-2026     | DDEV nog lokaal te testen                                                                      |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)                             | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                                        |
+| 2 Common/component + build          | ✅ klaar — deel 1 gemerged (PR #4), deel 2 op `stap-2-deel-2` | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld                   |
+| 3 Referentiecomponenten + Storybook | ✅ klaar (deel 2 op `stap-3-docs`)                            | 31-10-2026     | Docs-pagina's + Design System-artifact; 160 axe-controles groen                                |
+| 4 Cornerstone-landing               | ⬜ volgende                                                   |                | Begint met spikes (Global Colors/Fonts/Variables, component-export) op basis van theme.co docs |
+| 5 Kwaliteit & productie             | ⬜                                                            |                |                                                                                                |
 
-**Volgende actie:** PR `stap-3-componenten` mergen; daarna stap 3 deel 2 (nieuwe branch): Storybook-pagina's tokens/contrast/typografie + Design System-artifact gegenereerd uit de repo.
+**Volgende actie:** PR `stap-3-docs` mergen; daarna stap 4 (nieuwe branch): Cornerstone-spikes op basis van theme.co-documentatie, changelogs en forum. Benodigd van Winsley: Themeco Pro-zip (lokaal, niet in git) voor de DDEV-sandbox.
 
 ---
 
@@ -465,6 +467,8 @@ Gerangschikt op impact:
 | 30  | 31-10-2026 | Referentie-CSS mag naast component-tokens ook common gebruiken (`--basis-*`, `--dup-*`: focus, document, motion), nooit `--brand-*`; afgedwongen door `check-css`                                                                                           | Claude                             |
 | 31  | 31-10-2026 | Toegankelijkheidstest via eigen Playwright + axe-core-script over de statische Storybook-build (i.p.v. addon-vitest): deterministisch, test alle thema's × modi, werkt lokaal en in CI                                                                      | Claude                             |
 | 32  | 31-10-2026 | Storybook 10.6.5 + Vite 7.3.7 + Playwright 1.63.0 + axe-core 4.14.0 vastgepind                                                                                                                                                                              | Claude                             |
+| 33  | 31-10-2026 | Design System-artifact = alleen-lezen kopie van thema `doubleup` (`"editing": "code"`), gegenereerd door `packages/design-system`; sync via `docs/design-system-artifact.md`                                                                                | Claude                             |
+| 34  | 31-10-2026 | Tokens-build draait de contrastcontrole mee (rapport nodig voor Storybook); contrastfout breekt de build                                                                                                                                                    | Claude                             |
 
 ---
 

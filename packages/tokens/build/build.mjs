@@ -8,7 +8,7 @@
 // Alle selectors zijn even specifiek, dus het dichtstbijzijnde thema wint; geneste secties
 // (donkere band op lichte pagina, of een ander thema in een showcase) werken zo betrouwbaar.
 //
-// Verder: dist/css/all-themes.css, dist/json/<thema>.<modus>.json, dist/js/<thema>.<modus>.js
+// Verder: dist/css/all-themes.css, dist/json/<thema>.<modus>.json, dist/json/all-themes.json, dist/js/<thema>.<modus>.js
 
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import StyleDictionary from 'style-dictionary';
@@ -83,5 +83,13 @@ for (const theme of themes) {
   console.log(`✔ thema "${theme}" gebouwd (light + dark)`);
 }
 writeFileSync(`${dist}/css/all-themes.css`, css.join('\n'));
+// Alle thema's × modi in één JSON (voor Storybook-documentatie en exports)
+const all = { themes, modes: MODES, tokens: {} };
+for (const theme of themes) {
+  all.tokens[theme] = {};
+  for (const mode of MODES)
+    all.tokens[theme][mode] = JSON.parse(readFileSync(`${dist}/json/${theme}.${mode}.json`, 'utf8'));
+}
+writeFileSync(`${dist}/json/all-themes.json`, JSON.stringify(all));
 rmSync(`${dist}/tmp`, { recursive: true, force: true });
 console.log(`✔ dist/css/all-themes.css (${themes.length} thema's)`);
