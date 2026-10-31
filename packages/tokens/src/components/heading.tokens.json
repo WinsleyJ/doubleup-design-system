@@ -1,0 +1,265 @@
+{
+  "$description": "Heading, niveau 1–6 (NL DS Candidate: nl.heading.*). font-stretch is een dup-aanvulling.",
+  "dup": {
+    "heading": {
+      "level-1": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.heading.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-family": {
+          "$type": "fontFamily",
+          "$value": "{basis.heading.font-family}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.4xl}"
+        },
+        "font-stretch": {
+          "$type": "fontStretch",
+          "$value": "{dup.heading.font-stretch}",
+          "$description": "Aanvulling dup: breedte van koppen"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.heading.font-weight}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.4xl}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.md}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.2xl}"
+        }
+      },
+      "level-2": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.heading.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-family": {
+          "$type": "fontFamily",
+          "$value": "{basis.heading.font-family}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.3xl}"
+        },
+        "font-stretch": {
+          "$type": "fontStretch",
+          "$value": "{dup.heading.font-stretch}",
+          "$description": "Aanvulling dup: breedte van koppen"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.heading.font-weight}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.3xl}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.md}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.2xl}"
+        }
+      },
+      "level-3": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.heading.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-family": {
+          "$type": "fontFamily",
+          "$value": "{basis.heading.font-family}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.2xl}"
+        },
+        "font-stretch": {
+          "$type": "fontStretch",
+          "$value": "{dup.heading.font-stretch}",
+          "$description": "Aanvulling dup: breedte van koppen"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.heading.font-weight}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.2xl}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.md}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.xl}"
+        }
+      },
+      "level-4": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.heading.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-family": {
+          "$type": "fontFamily",
+          "$value": "{basis.heading.font-family}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.xl}"
+        },
+        "font-stretch": {
+          "$type": "fontStretch",
+          "$value": "{dup.heading.font-stretch}",
+          "$description": "Aanvulling dup: breedte van koppen"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.heading.font-weight}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.xl}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.md}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.xl}"
+        }
+      },
+      "level-5": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.heading.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-family": {
+          "$type": "fontFamily",
+          "$value": "{basis.heading.font-family}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.lg}"
+        },
+        "font-stretch": {
+          "$type": "fontStretch",
+          "$value": "{dup.heading.font-stretch}",
+          "$description": "Aanvulling dup: breedte van koppen"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.heading.font-weight}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.lg}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.md}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.xl}"
+        }
+      },
+      "level-6": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.heading.color}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "font-family": {
+          "$type": "fontFamily",
+          "$value": "{basis.heading.font-family}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.md}"
+        },
+        "font-stretch": {
+          "$type": "fontStretch",
+          "$value": "{dup.heading.font-stretch}",
+          "$description": "Aanvulling dup: breedte van koppen"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.heading.font-weight}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.md}"
+        },
+        "margin-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.md}"
+        },
+        "margin-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.text.xl}"
+        }
+      }
+    }
+  }
+}

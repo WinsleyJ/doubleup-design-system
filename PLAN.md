@@ -294,11 +294,11 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 ### Stap 2 — Common- en component-tokens + build-pipeline (± 3 sessies)
 
 - [x] Common-laag: alle 614 NL DS `basis`-tokens gevuld + aanvullingen onder `dup` (vulkleuren `dup.color.<rol>.bg-solid…`, motion, opacity, heading-breedte). Kleurrollen gegenereerd per modus (ADR-006)
-- [ ] Component-tokens voor de eerste set: button, link, heading, paragraph, form-field (textbox, label, error), card, alert, skip-link, navigation (basis)
+- [x] Component-tokens (14 componenten, ~330 tokens): button, link, heading, paragraph, form-field-label/-description/-error-message, text-input, alert, skip-link, mark (namen volgens NL DS Candidate) + eigen card, navigation; contrastvereisten bij de tokens
 - [x] Style Dictionary v5-config: CSS per thema met light/dark (`data-theme` + `data-color-scheme` + `prefers-color-scheme`), `all-themes.css`, JSON en JS per modus — _SCSS nog niet (pas als een platform erom vraagt)_
 - [x] Scripts (deterministisch, geen LLM nodig): `validate-names`, `check-contrast` (vereisten als `$extensions` bij het token; 1.614 paren), `check-contract` (brand-slots, alle basis-tokens, referenties, laagregel)
-- [ ] **Proefthema `voorbeeld`** met een totaal ander palet → bewijst dat alleen een brand-laag volstaat
-- [ ] Gegenereerde token-documentatie (alfabetisch per laag, conform projectdoc)
+- [x] **Proefthema `voorbeeld`** (warm neutraal, groenblauw, Source Serif 4, strakke hoeken, eigen typeschaal; erft niets) → haalt contract en contrast **zonder wijziging** in common of componenten
+- [x] Gegenereerde token-documentatie: `dist/docs/tokens.md` (per laag alfabetisch, licht/donker, verwijzing) en `dist/docs/themes.md` (brand per thema naast elkaar)
 
 **Model:** O voor common-contract-ontwerp · S voor build/scripts · H voor docs-generatie
 **DoD:** beide thema's bouwen, alle checks groen in CI.
@@ -415,16 +415,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                                   | Laatste update | Notities                                                                                      |
-| ----------------------------------- | ---------------------------------------- | -------------- | --------------------------------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)               | 31-10-2026     | DDEV nog lokaal te testen                                                                     |
-| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`)        | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                                       |
-| 2 Common/component + build          | 🔄 deel 1 klaar (branch `stap-2-common`) | 31-10-2026     | Common-laag + modi + checks klaar; open: component-tokens, proefthema `voorbeeld`, token-docs |
-| 3 Referentiecomponenten + Storybook | ⬜                                       |                |                                                                                               |
-| 4 Cornerstone-landing               | ⬜                                       |                |                                                                                               |
-| 5 Kwaliteit & productie             | ⬜                                       |                |                                                                                               |
+| Stap                                | Status                            | Laatste update | Notities                                                                     |
+| ----------------------------------- | --------------------------------- | -------------- | ---------------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)        | 31-10-2026     | DDEV nog lokaal te testen                                                    |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`) | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI                      |
+| 2 Common/component + build          | ✅ klaar (branch `stap-2-common`) | 31-10-2026     | 4 thema's × 2 modi; 2.034 tokens; 2.704 contrastparen groen; SCSS uitgesteld |
+| 3 Referentiecomponenten + Storybook | ⬜ volgende                       |                | Component-tokens liggen klaar; Storybook toont ook `dist/docs`               |
+| 4 Cornerstone-landing               | ⬜                                |                |                                                                              |
+| 5 Kwaliteit & productie             | ⬜                                |                |                                                                              |
 
-**Volgende actie:** PR's mergen (#2 → `stap-1-brand-laag` → `stap-2-common`); daarna stap 2 deel 2: component-tokens (button, link, heading, paragraph, form-field, card, alert, skip-link, navigation), proefthema `voorbeeld`, token-documentatie.
+**Volgende actie:** PR's mergen (#2 → `stap-1-brand-laag` → `stap-2-common`); daarna stap 3: referentiecomponenten (HTML/CSS) + Storybook met thema- en modewisselaar.
 
 ---
 
@@ -457,6 +457,9 @@ Gerangschikt op impact:
 | 23  | 31-10-2026 | Kleurrollen gegenereerd met vaste trap per modus; vulkleuren als `dup.color.<rol>.bg-solid…`; contrastvereisten als `$extensions` bij het token (ADR-006)                                                                                                   | Claude → ter review                |
 | 24  | 31-10-2026 | `data-color-scheme` altijd samen met `data-theme` op hetzelfde element (nodig voor betrouwbare nesting/showcase)                                                                                                                                            | Claude → ter review                |
 | 25  | 31-10-2026 | `extends` erft alleen de brand-laag, niet `roles.json`/overrides                                                                                                                                                                                            | Claude                             |
+| 26  | 31-10-2026 | Componentnamen volgen NL DS Candidate (button `primary/secondary/subtle` + tonen `positive/negative`; alert `error/info/success/warning`) i.p.v. `primary-action` uit het projectdocument-voorbeeld                                                         | Claude → bezwaar? laat het weten   |
+| 27  | 31-10-2026 | Proefthema `voorbeeld` (Source Serif 4, erft niets) blijft als contract-test in de repo                                                                                                                                                                     | Claude                             |
+| 28  | 31-10-2026 | Tokendocumentatie wordt gegenereerd naar `dist/docs` (niet gecommit); Storybook toont haar in stap 3                                                                                                                                                        | Claude                             |
 
 ---
 

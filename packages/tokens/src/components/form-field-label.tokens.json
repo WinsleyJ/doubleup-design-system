@@ -1,0 +1,51 @@
+{
+  "$description": "Label van een formulierveld (NL DS Candidate: nl.form-field-label.*).",
+  "dup": {
+    "form-field-label": {
+      "color": {
+        "$type": "color",
+        "$value": "{basis.color.default.color-document}",
+        "$extensions": {
+          "dup.contrast": [
+            {
+              "against": "basis.color.default.bg-document",
+              "use": "text"
+            }
+          ]
+        }
+      },
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{basis.text.font-family.default}"
+      },
+      "font-size": {
+        "$type": "dimension",
+        "$value": "{basis.text.font-size.md}"
+      },
+      "font-weight": {
+        "$type": "fontWeight",
+        "$value": "{basis.text.font-weight.bold}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{basis.text.line-height.md}"
+      },
+      "disabled": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.disabled.color-subtle}"
+        }
+      },
+      "option": {
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.text.font-weight.default}"
+        }
+      }
+    }
+  }
+}

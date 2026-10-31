@@ -14,11 +14,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "node build/build.mjs",
+    "build": "node build/build.mjs && node scripts/generate-docs.mjs",
     "check": "node scripts/validate-names.mjs && node scripts/check-contract.mjs && node scripts/check-contrast.mjs",
     "palette": "node scripts/generate-palette.mjs",
     "roles": "node scripts/generate-color-roles.mjs",
-    "generate": "for t in $(ls src/themes); do node scripts/generate-palette.mjs $t; done && node scripts/generate-color-roles.mjs"
+    "generate": "for t in $(ls src/themes); do node scripts/generate-palette.mjs $t; done && node scripts/generate-color-roles.mjs",
+    "docs": "node scripts/generate-docs.mjs"
   },
   "devDependencies": {
     "@nl-design-system-unstable/basis-design-tokens": "3.1.1",

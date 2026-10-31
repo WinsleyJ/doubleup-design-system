@@ -1,0 +1,31 @@
+{
+  "$description": "Proefthema: bewijst dat alleen een brand-laag nodig is. Erft niets. Warm, klassiek, strak.",
+  "colors": {
+    "neutral": {
+      "anchor": "#231a14",
+      "anchorStep": 950,
+      "kind": "neutral",
+      "description": "Warm bijna-zwart (koffie)"
+    },
+    "accent": {
+      "anchor": "#0f766e",
+      "description": "Diep groenblauw"
+    },
+    "info": {
+      "anchor": "#1d4ed8",
+      "description": "Ankerkleur info"
+    },
+    "positive": {
+      "anchor": "#15803d",
+      "description": "Ankerkleur positief"
+    },
+    "warning": {
+      "anchor": "#b45309",
+      "description": "Ankerkleur waarschuwing"
+    },
+    "negative": {
+      "anchor": "#b91c1c",
+      "description": "Ankerkleur negatief"
+    }
+  }
+}

@@ -1,0 +1,779 @@
+{
+  "$description": "Button. Namen volgen NL DS Candidate (nl.button.*) met prefix dup; varianten primary/secondary/subtle, tonen positive/negative.",
+  "dup": {
+    "button": {
+      "border-radius": {
+        "$type": "dimension",
+        "$value": "{basis.border-radius.round}"
+      },
+      "column-gap": {
+        "$type": "dimension",
+        "$value": "{basis.space.column.sm}"
+      },
+      "font-family": {
+        "$type": "fontFamily",
+        "$value": "{basis.text.font-family.default}"
+      },
+      "min-block-size": {
+        "$type": "dimension",
+        "$value": "{basis.pointer-target.min-block-size}"
+      },
+      "min-inline-size": {
+        "$type": "dimension",
+        "$value": "{basis.pointer-target.min-inline-size}"
+      },
+      "outline-offset": {
+        "$type": "dimension",
+        "$value": "{basis.focus.outline-offset}"
+      },
+      "padding-block-end": {
+        "$type": "dimension",
+        "$value": "{basis.space.block.sm}"
+      },
+      "padding-block-start": {
+        "$type": "dimension",
+        "$value": "{basis.space.block.sm}"
+      },
+      "padding-inline-end": {
+        "$type": "dimension",
+        "$value": "{basis.space.inline.xl}"
+      },
+      "padding-inline-start": {
+        "$type": "dimension",
+        "$value": "{basis.space.inline.xl}"
+      },
+      "icon": {
+        "size": {
+          "$type": "dimension",
+          "$value": "{basis.size.icon.md}"
+        }
+      },
+      "icon-only": {
+        "padding-block-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.block.sm}"
+        },
+        "padding-block-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.block.sm}"
+        },
+        "padding-inline-end": {
+          "$type": "dimension",
+          "$value": "{basis.space.block.sm}"
+        },
+        "padding-inline-start": {
+          "$type": "dimension",
+          "$value": "{basis.space.block.sm}"
+        }
+      },
+      "primary": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{dup.color.action-1.bg-solid}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{dup.color.action-1.bg-solid}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{dup.color.action-1.color-on-solid}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "dup.button.primary.background-color",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "hover": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{dup.color.action-1.bg-solid-hover}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{dup.color.action-1.bg-solid-hover}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{dup.color.action-1.color-on-solid}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.primary.hover.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          }
+        },
+        "active": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{dup.color.action-1.bg-solid-active}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{dup.color.action-1.bg-solid-active}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{dup.color.action-1.color-on-solid}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.primary.active.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          }
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.md}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.md}"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.text.font-weight.bold}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.lg}"
+        },
+        "disabled": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.bg-default}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.border-subtle}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.color-subtle}"
+          }
+        },
+        "positive": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{dup.color.positive.bg-solid}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{dup.color.positive.bg-solid}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{dup.color.positive.color-on-solid}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.primary.positive.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "hover": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{dup.color.positive.bg-solid-hover}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{dup.color.positive.bg-solid-hover}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{dup.color.positive.color-on-solid}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.primary.positive.hover.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "active": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{dup.color.positive.bg-solid-active}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{dup.color.positive.bg-solid-active}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{dup.color.positive.color-on-solid}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.primary.positive.active.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "negative": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{dup.color.negative.bg-solid}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{dup.color.negative.bg-solid}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{dup.color.negative.color-on-solid}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.primary.negative.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "hover": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{dup.color.negative.bg-solid-hover}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{dup.color.negative.bg-solid-hover}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{dup.color.negative.color-on-solid}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.primary.negative.hover.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "active": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{dup.color.negative.bg-solid-active}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{dup.color.negative.bg-solid-active}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{dup.color.negative.color-on-solid}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.primary.negative.active.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "secondary": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.transparent}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "non-text"
+              }
+            ]
+          }
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.default.color-document}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "hover": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.default.bg-hover}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.default.color-document}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.default.color-document}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.secondary.hover.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          }
+        },
+        "active": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.default.bg-active}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.default.color-document}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.default.color-document}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.secondary.active.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          }
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.md}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.md}"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.text.font-weight.bold}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.lg}"
+        },
+        "disabled": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.bg-default}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.border-subtle}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.color-subtle}"
+          }
+        },
+        "positive": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.positive.border-default}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "basis.color.default.bg-document",
+                  "use": "non-text"
+                }
+              ]
+            }
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.positive.color-default}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "basis.color.default.bg-document",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "hover": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.bg-hover}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.border-hover}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.color-hover}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.secondary.positive.hover.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "active": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.bg-active}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.border-active}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.color-active}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.secondary.positive.active.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "negative": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.negative.border-default}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "basis.color.default.bg-document",
+                  "use": "non-text"
+                }
+              ]
+            }
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.negative.color-default}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "basis.color.default.bg-document",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "hover": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.bg-hover}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.border-hover}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.color-hover}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.secondary.negative.hover.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "active": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.bg-active}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.border-active}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.color-active}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.secondary.negative.active.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "subtle": {
+        "background-color": {
+          "$type": "color",
+          "$value": "{basis.color.transparent}"
+        },
+        "border-color": {
+          "$type": "color",
+          "$value": "{basis.color.transparent}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{basis.color.action-1.color-default}",
+          "$extensions": {
+            "dup.contrast": [
+              {
+                "against": "basis.color.default.bg-document",
+                "use": "text"
+              }
+            ]
+          }
+        },
+        "hover": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.action-1.bg-hover}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.action-1.color-hover}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.subtle.hover.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          }
+        },
+        "active": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.action-1.bg-active}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.action-1.color-active}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "dup.button.subtle.active.background-color",
+                  "use": "text"
+                }
+              ]
+            }
+          }
+        },
+        "border-width": {
+          "$type": "dimension",
+          "$value": "{basis.border-width.md}"
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{basis.text.font-size.md}"
+        },
+        "font-weight": {
+          "$type": "fontWeight",
+          "$value": "{basis.text.font-weight.bold}"
+        },
+        "line-height": {
+          "$type": "number",
+          "$value": "{basis.text.line-height.lg}"
+        },
+        "disabled": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.bg-default}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.border-subtle}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.disabled.color-subtle}"
+          }
+        },
+        "positive": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.positive.color-default}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "basis.color.default.bg-document",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "hover": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.bg-hover}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.transparent}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.color-hover}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.subtle.positive.hover.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "active": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.bg-active}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.transparent}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.positive.color-active}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.subtle.positive.active.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "negative": {
+          "background-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "border-color": {
+            "$type": "color",
+            "$value": "{basis.color.transparent}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{basis.color.negative.color-default}",
+            "$extensions": {
+              "dup.contrast": [
+                {
+                  "against": "basis.color.default.bg-document",
+                  "use": "text"
+                }
+              ]
+            }
+          },
+          "hover": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.bg-hover}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.transparent}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.color-hover}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.subtle.negative.hover.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          },
+          "active": {
+            "background-color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.bg-active}"
+            },
+            "border-color": {
+              "$type": "color",
+              "$value": "{basis.color.transparent}"
+            },
+            "color": {
+              "$type": "color",
+              "$value": "{basis.color.negative.color-active}",
+              "$extensions": {
+                "dup.contrast": [
+                  {
+                    "against": "dup.button.subtle.negative.active.background-color",
+                    "use": "text"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
