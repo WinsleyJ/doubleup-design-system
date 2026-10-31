@@ -4,6 +4,7 @@ Multi-brand design system. Tokens (DTCG) → Style Dictionary v5 → CSS-variabe
 
 ## Altijd
 
+- **`PLAN.md` is de enige bron van waarheid** (zie § 0 werkafspraken). Projectnotities, artifacts en eerdere chats zijn niet leidend; wijken ze af, dan geldt het plan.
 - **Begin elke sessie met `PLAN.md` § 9 (Status)** en pak de eerstvolgende open taak. Eén taak per sessie.
 - **Eindig elke sessie** met het bijwerken van `PLAN.md` § 9 (status) en § 10 (beslissingen) als er iets besloten is.
 - Communiceer en documenteer in het **Nederlands**; code, commits en identifiers in het Engels waar gebruikelijk.

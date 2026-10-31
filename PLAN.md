@@ -1,11 +1,14 @@
 # DoubleUP Design System — Plan
 
 > **Levend document.** Elke werksessie begint met het lezen van dit bestand en eindigt met het bijwerken van [§ 9 Status](#9-status--voortgang) en [§ 10 Beslissingenlog](#10-beslissingenlog).
-> Versie 0.3 · 31 oktober 2026 · eigenaar: Winsley (DoubleUP)
+> **Dit bestand is de enige bron van waarheid.** Notities, artifacts of chats buiten deze repo zijn niet leidend; wijkt iets af, dan geldt dit plan (zie § 0).
+> Versie 0.4 · 31 oktober 2026 · eigenaar: Winsley (DoubleUP)
 
 ---
 
 ## Inhoud
+
+0. [Werkafspraken voor elke sessie](#0-werkafspraken-voor-elke-sessie)
 
 1. [Doel en uitgangspunten](#1-doel-en-uitgangspunten)
 2. [Architectuur: drie tokenlagen, één contract](#2-architectuur-drie-tokenlagen-één-contract)
@@ -19,6 +22,18 @@
 10. [Beslissingenlog](#10-beslissingenlog)
 11. [Open vragen](#11-open-vragen)
 12. [Risico's](#12-risicos)
+
+---
+
+## 0. Werkafspraken voor elke sessie
+
+Deze afspraken gelden voor **elke** Claude-sessie, in welke app dan ook (Claude Code, claude.ai-chat, Cowork, mobiel).
+
+1. **Repo koppelen en dit plan lezen vóór er iets gemaakt wordt.** Repo: `WinsleyJ/doubleup-design-system`. Lees § 9 (status) en § 10 (beslissingen). Kan een sessie de repo niet bereiken: niets ontwerpen of besluiten, alleen vragen of meelezen.
+2. **Eén stap tegelijk, in volgorde van § 5.** Geen stap overslaan of een eigen fasering maken.
+3. **Beslissingen staan alleen in § 10.** Afwijken van een beslissing = eerst de gebruiker vragen, daarna § 10 bijwerken.
+4. **Resultaten landen in de repo** (branch + PR). Een artifact of projectnotitie mag als preview of samenvatting, maar verwijst naar de repo en bevat geen eigen beslissingen.
+5. **Het claude.ai-project bevat alleen een verwijzing** naar dit plan (`claude/LEES EERST – DoubleUP design system`), geen kopie van plan of beslissingen. Zo kunnen er geen twee versies ontstaan.
 
 ---
 
@@ -262,6 +277,7 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 ### Stap 1 — Huisstijl DoubleUP: brand-laag (± 2 sessies)
 
+- [ ] Input meenemen: `docs/verkenningen/2026-10-31-tokens-v0.1.md` (ink-schaal, feedbackkleuren, Archivo als fontkandidaat, vormtaal), omzetten naar brand-slots
 - [ ] Neutral-schaal rond `#111318` (OKLCH-gebaseerd, 0–1000)
 - [ ] 3 accentvoorstellen → jij kiest → accent-schaal 50–950
 - [ ] Feedbackkleuren (positive/negative/warning/info)
@@ -396,39 +412,40 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                               | Laatste update | Notities                                  |
-| ----------------------------------- | ------------------------------------ | -------------- | ----------------------------------------- |
-| 0 Fundament                         | ✅ klaar (branch `stap-0-fundament`) | 31-10-2026     | Wacht op merge; DDEV nog lokaal te testen |
-| 1 Brand-laag DoubleUP               | ⬜                                   |                |                                           |
-| 2 Common/component + build          | ⬜                                   |                |                                           |
-| 3 Referentiecomponenten + Storybook | ⬜                                   |                |                                           |
-| 4 Cornerstone-landing               | ⬜                                   |                |                                           |
-| 5 Kwaliteit & productie             | ⬜                                   |                |                                           |
+| Stap                                | Status                     | Laatste update | Notities                                                               |
+| ----------------------------------- | -------------------------- | -------------- | ---------------------------------------------------------------------- |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1) | 31-10-2026     | DDEV nog lokaal te testen                                              |
+| 1 Brand-laag DoubleUP               | ⬜ volgende                | 31-10-2026     | Verkenning v0.1 uit andere sessie beschikbaar als input (niet leidend) |
+| 2 Common/component + build          | ⬜                         |                |                                                                        |
+| 3 Referentiecomponenten + Storybook | ⬜                         |                |                                                                        |
+| 4 Cornerstone-landing               | ⬜                         |                |                                                                        |
+| 5 Kwaliteit & productie             | ⬜                         |                |                                                                        |
 
-**Volgende actie:** branch `stap-0-fundament` reviewen en mergen → stap 1 (brand-laag DoubleUP: neutral-schaal, 3 accentvoorstellen, 2–3 fontvoorstellen).
+**Volgende actie:** stap 1 — brand-laag DoubleUP: neutral-schaal, 3 accentvoorstellen, 2–3 fontvoorstellen (Archivo is er één van), light + dark.
 
 ---
 
 ## 10. Beslissingenlog
 
-| #   | Datum      | Beslissing                                                                                                                                                                   | Door                               |
-| --- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| 1   | 31-10-2026 | Nieuwe monorepo; bestaande repo's (`doubleup-design-tokens`, `doubleup-theme`, `cornerstone-parameters`) niet als basis                                                      | Winsley                            |
-| 2   | 31-10-2026 | Kleurpalet: monochroom (ink `#111318`) + 1 accentkleur, light + dark                                                                                                         | Winsley                            |
-| 3   | 31-10-2026 | Cornerstone: Pro + child theme, volledige landing (CSS-variabelen, Global Colors/Fonts, Components/Parameters)                                                               | Winsley                            |
-| 4   | 31-10-2026 | Plan leeft als `PLAN.md` in de repo                                                                                                                                          | Winsley                            |
-| 5   | 31-10-2026 | Voorstel: DTCG-formaat + Style Dictionary v5 (bevestigen in ADR-001)                                                                                                         | Claude → ter bevestiging           |
-| 6   | 31-10-2026 | Voorstel: Storybook in stap 3, Chromatic in stap 5 (niet uitstellen tot na M1)                                                                                               | Claude → ter bevestiging           |
-| 7   | 31-10-2026 | Cornerstone-kennis alleen uit officiële theme.co-documentatie, changelogs en forum; repo `cornerstone-parameters` wordt niet gebruikt (verouderd)                            | Winsley                            |
-| 8   | 31-10-2026 | Systeemprefix `dup` (component-tokens + common-aanvullingen; CSS `--dup-…`, klassen `.dup-…`)                                                                                | Winsley                            |
-| 9   | 31-10-2026 | Common-laag sluit aan op NL DS `basis`-tokens, **mits** dat ook werkt voor niet-overheidsprojecten en alle beoogde platforms (toets in ADR-004; anders volledig onder `dup`) | Winsley                            |
-| 10  | 31-10-2026 | Lettertypen: uitsluitend self-hosted open source                                                                                                                             | Winsley                            |
-| 11  | 31-10-2026 | Lokale omgevingen: DDEV (WordPress, later Drupal en Craft); Astro/EmDash via Node                                                                                            | Claude-advies, akkoord Winsley     |
-| 12  | 31-10-2026 | Distributie WP-onderdelen via GitHub Releases                                                                                                                                | Winsley                            |
-| 13  | 31-10-2026 | Repo `doubleup-website` was een test en staat los van dit project; M1 levert een nieuwe DoubleUP-site op                                                                     | Winsley                            |
-| 14  | 31-10-2026 | Pro-licentie mag gebruikt worden in een privé CI-omgeving → Playwright-tests tegen WordPress draaien in CI                                                                   | Winsley                            |
-| 15  | 31-10-2026 | Toets NL DS `basis` positief: common-laag = `basis` (v3.1.1 vastgepind) + aanvullingen onder `dup` (ADR-004)                                                                 | Claude, conform voorwaarde Winsley |
-| 16  | 31-10-2026 | Voorstel #5 vastgelegd in ADR-001: DTCG + Style Dictionary 5.7.1 (vastgepind)                                                                                                | Claude → bezwaar? laat het weten   |
+| #   | Datum      | Beslissing                                                                                                                                                                                                                                                  | Door                               |
+| --- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| 1   | 31-10-2026 | Nieuwe monorepo; bestaande repo's (`doubleup-design-tokens`, `doubleup-theme`, `cornerstone-parameters`) niet als basis                                                                                                                                     | Winsley                            |
+| 2   | 31-10-2026 | Kleurpalet: monochroom (ink `#111318`) + 1 accentkleur, light + dark                                                                                                                                                                                        | Winsley                            |
+| 3   | 31-10-2026 | Cornerstone: Pro + child theme, volledige landing (CSS-variabelen, Global Colors/Fonts, Components/Parameters)                                                                                                                                              | Winsley                            |
+| 4   | 31-10-2026 | Plan leeft als `PLAN.md` in de repo                                                                                                                                                                                                                         | Winsley                            |
+| 5   | 31-10-2026 | Voorstel: DTCG-formaat + Style Dictionary v5 (bevestigen in ADR-001)                                                                                                                                                                                        | Claude → ter bevestiging           |
+| 6   | 31-10-2026 | Voorstel: Storybook in stap 3, Chromatic in stap 5 (niet uitstellen tot na M1)                                                                                                                                                                              | Claude → ter bevestiging           |
+| 7   | 31-10-2026 | Cornerstone-kennis alleen uit officiële theme.co-documentatie, changelogs en forum; repo `cornerstone-parameters` wordt niet gebruikt (verouderd)                                                                                                           | Winsley                            |
+| 8   | 31-10-2026 | Systeemprefix `dup` (component-tokens + common-aanvullingen; CSS `--dup-…`, klassen `.dup-…`)                                                                                                                                                               | Winsley                            |
+| 9   | 31-10-2026 | Common-laag sluit aan op NL DS `basis`-tokens, **mits** dat ook werkt voor niet-overheidsprojecten en alle beoogde platforms (toets in ADR-004; anders volledig onder `dup`)                                                                                | Winsley                            |
+| 10  | 31-10-2026 | Lettertypen: uitsluitend self-hosted open source                                                                                                                                                                                                            | Winsley                            |
+| 11  | 31-10-2026 | Lokale omgevingen: DDEV (WordPress, later Drupal en Craft); Astro/EmDash via Node                                                                                                                                                                           | Claude-advies, akkoord Winsley     |
+| 12  | 31-10-2026 | Distributie WP-onderdelen via GitHub Releases                                                                                                                                                                                                               | Winsley                            |
+| 13  | 31-10-2026 | Repo `doubleup-website` was een test en staat los van dit project; M1 levert een nieuwe DoubleUP-site op                                                                                                                                                    | Winsley                            |
+| 14  | 31-10-2026 | Pro-licentie mag gebruikt worden in een privé CI-omgeving → Playwright-tests tegen WordPress draaien in CI                                                                                                                                                  | Winsley                            |
+| 15  | 31-10-2026 | Toets NL DS `basis` positief: common-laag = `basis` (v3.1.1 vastgepind) + aanvullingen onder `dup` (ADR-004)                                                                                                                                                | Claude, conform voorwaarde Winsley |
+| 16  | 31-10-2026 | Voorstel #5 vastgelegd in ADR-001: DTCG + Style Dictionary 5.7.1 (vastgepind)                                                                                                                                                                               | Claude → bezwaar? laat het weten   |
+| 17  | 31-10-2026 | Een sessie zonder repo-toegang maakte een eigen plan (tokens v0.1, prefix `doubleup`, geen `basis`/accent/dark). Niet leidend; bruikbare delen bewaard als verkenning. Werkafspraken § 0 toegevoegd; projectnotitie vervangen door verwijzing "LEES EERST". | Claude, op verzoek Winsley         |
 
 ---
 
@@ -440,11 +457,12 @@ Gerangschikt op impact:
 
 ## 12. Risico's
 
-| Risico                                                                                                                       | Impact                                                     | Maatregel                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cornerstone-opslagformaten (global colors/variables, components) zijn deels ongedocumenteerd en kunnen per update veranderen | Sync breekt na update                                      | Spikes eerst; adapter test tegen vastgepinde Pro-versie; Playwright-screenshots in CI; versiecheck in sync-plugin                            |
-| Global Colors accepteren mogelijk geen `var()` → dark mode niet via de color picker                                          | Redacteuren kiezen vaste hex-waarden die niet meeschakelen | Fallback: componenten gebruiken altijd tokens in Element-CSS; color picker alleen voor uitzonderingen                                        |
-| Pro is commerciële software                                                                                                  | Niet in repo of publieke CI                                | Lokaal in DDEV-sandbox; in **privé** CI ophalen uit een versleutelde bron (GitHub Secret / privé artifact), nooit committen of in logs tonen |
-| NL DS `basis` wijzigt of is te overheidsspecifiek                                                                            | Common-laag moet later omgebouwd worden                    | Toets vooraf (ADR-004); `basis`-versie vastpinnen; eigen aanvullingen altijd onder `dup`, zodat uitstappen beperkt blijft tot de common-laag |
-| DTCG 2025.10-ondersteuning verschilt per tool                                                                                | Incompatibiliteit met bijv. Figma-plugins                  | Style Dictionary als enige bron-consument; exports per tool als aparte output                                                                |
-| Scope-creep naar andere platforms vóór M1                                                                                    | M1 schuift op                                              | Adapters na M1 alleen als ADR/notitie, geen code                                                                                             |
+| Risico                                                                                                                       | Impact                                                     | Maatregel                                                                                                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Cornerstone-opslagformaten (global colors/variables, components) zijn deels ongedocumenteerd en kunnen per update veranderen | Sync breekt na update                                      | Spikes eerst; adapter test tegen vastgepinde Pro-versie; Playwright-screenshots in CI; versiecheck in sync-plugin                                     |
+| Global Colors accepteren mogelijk geen `var()` → dark mode niet via de color picker                                          | Redacteuren kiezen vaste hex-waarden die niet meeschakelen | Fallback: componenten gebruiken altijd tokens in Element-CSS; color picker alleen voor uitzonderingen                                                 |
+| Pro is commerciële software                                                                                                  | Niet in repo of publieke CI                                | Lokaal in DDEV-sandbox; in **privé** CI ophalen uit een versleutelde bron (GitHub Secret / privé artifact), nooit committen of in logs tonen          |
+| NL DS `basis` wijzigt of is te overheidsspecifiek                                                                            | Common-laag moet later omgebouwd worden                    | Toets vooraf (ADR-004); `basis`-versie vastpinnen; eigen aanvullingen altijd onder `dup`, zodat uitstappen beperkt blijft tot de common-laag          |
+| DTCG 2025.10-ondersteuning verschilt per tool                                                                                | Incompatibiliteit met bijv. Figma-plugins                  | Style Dictionary als enige bron-consument; exports per tool als aparte output                                                                         |
+| Sessie zonder repo-toegang werkt zonder plan en maakt eigen keuzes                                                           | Dubbel werk, tegenstrijdige beslissingen                   | § 0 werkafspraken; projectdoc "LEES EERST" + projectinstructie; CI weigert afwijkende namen (`validate-names` staat alleen `brand`/`basis`/`dup` toe) |
+| Scope-creep naar andere platforms vóór M1                                                                                    | M1 schuift op                                              | Adapters na M1 alleen als ADR/notitie, geen code                                                                                                      |
