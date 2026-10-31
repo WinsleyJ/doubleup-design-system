@@ -18,6 +18,7 @@
     "check": "node scripts/validate-names.mjs"
   },
   "devDependencies": {
+    "culori": "4.0.2",
     "style-dictionary": "5.7.1"
   }
 }

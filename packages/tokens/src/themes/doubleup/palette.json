@@ -1,0 +1,15 @@
+{
+  "$description": "Invoer voor scripts/generate-palette.mjs. Accent volgt na keuze in stap 1 (voorstellen: blauw #2f5bff, oranje #ff5a1f, lime #c6f432).",
+  "colors": {
+    "neutral": {
+      "anchor": "#111318",
+      "anchorStep": 950,
+      "kind": "neutral",
+      "description": "Ink-kleur uit alle positieve logovarianten"
+    },
+    "info": { "anchor": "#2563eb", "description": "Ankerkleur info" },
+    "positive": { "anchor": "#16a34a", "description": "Ankerkleur positief (gelukt)" },
+    "warning": { "anchor": "#d97706", "description": "Ankerkleur waarschuwing" },
+    "negative": { "anchor": "#dc2626", "description": "Ankerkleur negatief (fout)" }
+  }
+}
