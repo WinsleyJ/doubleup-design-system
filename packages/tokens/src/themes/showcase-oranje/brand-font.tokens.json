@@ -1,0 +1,29 @@
+{
+  "$description": "Typografie showcase-oranje. Fontbestanden: @doubleup/fonts/bricolage-grotesque.css",
+  "brand": {
+    "font-family": {
+      "$type": "fontFamily",
+      "display": {
+        "$value": ["Bricolage Grotesque Variable", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        "$description": "Bricolage Grotesque (showcase); kan niet breder dan 100%"
+      },
+      "body": {
+        "$value": ["Bricolage Grotesque Variable", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"]
+      },
+      "mono": {
+        "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "Liberation Mono", "monospace"]
+      }
+    },
+    "font-stretch": {
+      "$type": "fontStretch",
+      "$description": "CSS font-stretch (percentage); geen standaard DTCG-type",
+      "normal": {
+        "$value": "100%"
+      },
+      "display": {
+        "$value": "100%",
+        "$description": "Breedte voor koppen"
+      }
+    }
+  }
+}

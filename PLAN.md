@@ -279,12 +279,14 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 
 - [x] Input meenemen: `docs/verkenningen/2026-10-31-tokens-v0.1.md` (ink-schaal, feedbackkleuren, Archivo als fontkandidaat, vormtaal), omzetten naar brand-slots
 - [x] Neutral-schaal rond `#111318` (OKLCH-gebaseerd, 0–950; 950 = logokleur) — generator `scripts/generate-palette.mjs` + `palette.json` per thema
-- [ ] 3 accentvoorstellen → jij kiest → accent-schaal 50–950 — _voorstellen klaar (blauw / oranje / lime), wacht op keuze_
+- [x] 3 accentvoorstellen → jij kiest → accent-schaal 50–950 — **gekozen: zuurlime `#c6f432`**; blauw en oranje bewaard als showcase-thema's (`docs/themas.md`)
 - [x] Feedbackkleuren (positive/negative/warning/info), schalen 50–950
-- [ ] Typografie: 2–3 voorstellen voor **self-hosted open-source fonts** (SIL OFL of vergelijkbaar, variable font waar mogelijk, woff2-subsets, `font-display: swap`) → jij kiest → `packages/fonts`; _voorstellen: Archivo / Mona Sans / Bricolage Grotesque, wacht op keuze_; type-schaal (fluid, `clamp()`), line-heights, font-weights
+- [x] Typografie: 2–3 voorstellen voor **self-hosted open-source fonts** (SIL OFL of vergelijkbaar, variable font waar mogelijk, woff2-subsets, `font-display: swap`) → jij kiest → `packages/fonts`; **gekozen: Archivo** (koppen 118% breed); Mona Sans en Bricolage Grotesque in de showcase-thema's; type-schaal (fluid, `clamp()`), line-heights, font-weights
 - [x] Space-schaal, radius, border-width, opacity (`0.38` uit logo), schaduwen, motion (duration/easing), font-weights, line-heights, vloeiende font-size-schaal (sm–4xl, sluit aan op `basis.text.font-size`)
-- [ ] Logo's en iconen naar `packages/icons`
-- [ ] Visuele huisstijlpagina (Design System-artifact) ter review — _eerst keuzepagina: https://claude.ai/artifact/XAM3XfMnvkydWqJkA1NJpG; Design System-artifact na keuze_
+- [x] Logo's en iconen naar `packages/icons` (generator; 10 originelen + 4 `currentColor`-varianten)
+- [x] Extra: `check-contrast` in `pnpm check` (108 paren: 3 thema's × light/dark), thema-overerving (`extends`), `roles.json` per thema
+- [x] Visuele review via keuzepagina: https://claude.ai/artifact/XAM3XfMnvkydWqJkA1NJpG
+- [ ] ~~Design System-artifact~~ → **verplaatst naar einde stap 3** en dan _gegenereerd uit de repo_ (zie § 10 #22), zodat het geen tweede bron van waarheid wordt
 
 **Model:** O voor kleur-/typografiekeuzes en schaalopbouw · S voor uitschrijven JSON
 **DoD:** brand-tokens valide DTCG, contrastrapport groen voor alle beoogde tekst/achtergrond-paren.
@@ -320,6 +322,7 @@ Legenda modellen: **O** = Opus 5.5 · **S** = Sonnet 5.5 · **H** = Haiku 5.5 (z
 - [ ] Style Dictionary-format(s) voor Cornerstone (colors/fonts/variables JSON)
 - [ ] Cornerstone Components + Parameters voor de componentset uit stap 2/3
 - [ ] Demopagina's: homepage, contentpagina, formulier — in light en dark
+- [ ] **Thema-showcase** op de DoubleUP-site: themawisselaar (`doubleup` / `showcase-blauw` / `showcase-oranje`) × light/dark op dezelfde Cornerstone-pagina — laat zien wat een brand-laag doet
 - [ ] Draaiboek "nieuwe klant in Cornerstone" (≤ 1 A4)
 
 **Model:** O voor de spikes en de sync-architectuur · S voor bouw · H voor herhalende component-JSON
@@ -412,16 +415,16 @@ Gerangschikt op impact:
 
 ## 9. Status / voortgang
 
-| Stap                                | Status                                        | Laatste update | Notities                                                                                          |
-| ----------------------------------- | --------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
-| 0 Fundament                         | ✅ klaar (gemerged, PR #1)                    | 31-10-2026     | DDEV nog lokaal te testen                                                                         |
-| 1 Brand-laag DoubleUP               | 🔄 in uitvoering (branch `stap-1-brand-laag`) | 31-10-2026     | Wacht op keuze accent + lettertype; daarna logo's, contrastcheck in build, Design System-artifact |
-| 2 Common/component + build          | ⬜                                            |                |                                                                                                   |
-| 3 Referentiecomponenten + Storybook | ⬜                                            |                |                                                                                                   |
-| 4 Cornerstone-landing               | ⬜                                            |                |                                                                                                   |
-| 5 Kwaliteit & productie             | ⬜                                            |                |                                                                                                   |
+| Stap                                | Status                            | Laatste update | Notities                                                     |
+| ----------------------------------- | --------------------------------- | -------------- | ------------------------------------------------------------ |
+| 0 Fundament                         | ✅ klaar (gemerged, PR #1)        | 31-10-2026     | DDEV nog lokaal te testen                                    |
+| 1 Brand-laag DoubleUP               | ✅ klaar (PR `stap-1-brand-laag`) | 31-10-2026     | Lime + Archivo; 2 showcase-thema's; contrastcheck in CI      |
+| 2 Common/component + build          | ⬜ volgende                       |                | Rollen uit `roles.json` worden common-laag (`basis` + `dup`) |
+| 3 Referentiecomponenten + Storybook | ⬜                                |                |                                                              |
+| 4 Cornerstone-landing               | ⬜                                |                |                                                              |
+| 5 Kwaliteit & productie             | ⬜                                |                |                                                              |
 
-**Volgende actie:** Winsley kiest accent (A blauw / B oranje / C lime) en lettertype (A Archivo / B Mona Sans / C Bricolage) via de keuzepagina → Claude rondt stap 1 af.
+**Volgende actie:** PR #2 en daarna PR `stap-1-brand-laag` mergen → stap 2 (common-laag op NL DS `basis`, component-tokens, kleurmodi in CSS, `check-contract`).
 
 ---
 
@@ -446,6 +449,11 @@ Gerangschikt op impact:
 | 15  | 31-10-2026 | Toets NL DS `basis` positief: common-laag = `basis` (v3.1.1 vastgepind) + aanvullingen onder `dup` (ADR-004)                                                                                                                                                | Claude, conform voorwaarde Winsley |
 | 16  | 31-10-2026 | Voorstel #5 vastgelegd in ADR-001: DTCG + Style Dictionary 5.7.1 (vastgepind)                                                                                                                                                                               | Claude → bezwaar? laat het weten   |
 | 17  | 31-10-2026 | Een sessie zonder repo-toegang maakte een eigen plan (tokens v0.1, prefix `doubleup`, geen `basis`/accent/dark). Niet leidend; bruikbare delen bewaard als verkenning. Werkafspraken § 0 toegevoegd; projectnotitie vervangen door verwijzing "LEES EERST". | Claude, op verzoek Winsley         |
+| 18  | 31-10-2026 | Accent DoubleUP: zuurlime `#c6f432`. Light: knoppen inkt met lime tekst, links inkt met lime onderstreping; dark: lime als actie-/linkkleur                                                                                                                 | Winsley                            |
+| 19  | 31-10-2026 | Lettertype DoubleUP: Archivo (variabel, self-hosted), koppen 118% breed                                                                                                                                                                                     | Winsley                            |
+| 20  | 31-10-2026 | Niet-gekozen voorstellen blijven als showcase-thema's: `showcase-blauw` (blauw + Mona Sans, info → cyaan) en `showcase-oranje` (oranje + Bricolage). Doel: thema-showcase op de DoubleUP-site (stap 4)                                                      | Winsley                            |
+| 21  | 31-10-2026 | Thema's kunnen erven (`theme.json` → `extends`); kleurschalen worden gegenereerd uit `palette.json`                                                                                                                                                         | Claude                             |
+| 22  | 31-10-2026 | Design System-artifact verplaatst van stap 1 naar einde stap 3, gegenereerd uit de repo (geen tweede bron van waarheid, zie § 0)                                                                                                                            | Claude → bezwaar? laat het weten   |
 
 ---
 

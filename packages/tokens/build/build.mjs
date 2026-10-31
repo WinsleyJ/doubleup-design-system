@@ -1,19 +1,13 @@
 // Bouwt per thema de token-output met Style Dictionary v5 (DTCG-formaat).
-// Bronnen per thema: src/themes/<thema>/**  +  src/common/**  +  src/components/**
+// Invoer per thema: src/themes/<thema>/** (incl. ouders via theme.json "extends") + src/common/** + src/components/**
 // Uitvoer: dist/css/<thema>.css, dist/json/<thema>.json, dist/js/<thema>.js
 //
 // Kleurmodi (light/dark) en platform-formats (Cornerstone, theme.json, …) volgen in stap 2 en 4.
 
-import { readdirSync, statSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import StyleDictionary from 'style-dictionary';
+import { listThemes, loadAllTokens, root, themeChain } from '../scripts/lib/themes.mjs';
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const themesDir = join(root, 'src', 'themes');
-
-const themes = readdirSync(themesDir).filter((name) => statSync(join(themesDir, name)).isDirectory());
-
+const themes = listThemes();
 if (themes.length === 0) {
   console.error('Geen thema’s gevonden in src/themes/.');
   process.exit(1);
@@ -21,11 +15,7 @@ if (themes.length === 0) {
 
 for (const theme of themes) {
   const sd = new StyleDictionary({
-    source: [
-      `${root}/src/themes/${theme}/**/*.tokens.json`,
-      `${root}/src/common/**/*.tokens.json`,
-      `${root}/src/components/**/*.tokens.json`,
-    ],
+    tokens: loadAllTokens(theme),
     usesDtcg: true,
     log: { verbosity: 'default', warnings: 'warn' },
     platforms: {
@@ -54,5 +44,5 @@ for (const theme of themes) {
   });
 
   await sd.buildAllPlatforms();
-  console.log(`✔ thema "${theme}" gebouwd`);
+  console.log(`✔ thema "${theme}" gebouwd (${themeChain(theme).join(' → ')})`);
 }

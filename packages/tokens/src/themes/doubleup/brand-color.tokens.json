@@ -42,6 +42,42 @@
           "$description": "Ink-kleur uit alle positieve logovarianten"
         }
       },
+      "accent": {
+        "50": {
+          "$value": "#eeffcd"
+        },
+        "100": {
+          "$value": "#dffca1"
+        },
+        "200": {
+          "$value": "#c6f432",
+          "$description": "Zuurlime: accent van DoubleUP (keuze 31-10-2026)"
+        },
+        "300": {
+          "$value": "#afdb00"
+        },
+        "400": {
+          "$value": "#96bc00"
+        },
+        "500": {
+          "$value": "#7b9a00"
+        },
+        "600": {
+          "$value": "#637d00"
+        },
+        "700": {
+          "$value": "#4f6400"
+        },
+        "800": {
+          "$value": "#3c4d00"
+        },
+        "900": {
+          "$value": "#273300"
+        },
+        "950": {
+          "$value": "#161e00"
+        }
+      },
       "info": {
         "50": {
           "$value": "#f3f7ff"
